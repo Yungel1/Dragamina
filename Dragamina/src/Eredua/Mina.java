@@ -1,6 +1,6 @@
 package Eredua;
 
-public class Mina {
+public class Mina extends Kasilla {
 	
 	private int errenkada;
 	private int zutabe;
