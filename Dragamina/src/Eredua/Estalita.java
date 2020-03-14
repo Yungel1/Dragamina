@@ -5,6 +5,5 @@ public class Estalita implements Estaltzea{
         
     }
     public void desestali(){
-        
     }
 }
