@@ -37,35 +37,69 @@ public class Matrizea {
     		}
     	}
     }
+    
+    
+    private void besteKasillakEsleitu(){
+    	
+    	int zenbatMina = 0;
+    	
+    	for(int errenka = 0; errenka < this.matrize.length; errenka++){
+    		
+    		for(int zutabe = 0; zutabe < this.matrize[0].length; zutabe++){
+    			
+    			if( !( this.matrize[errenka][zutabe] instanceof Mina) ){
+    				
+    				zenbatMina = ingurukoMinaKopurua(errenka, zutabe);
+    			
+	    			if( zenbatMina == 0){
+	    				
+	    				this.matrize[errenka][zutabe] = new Hutsa();
+	    			}
+	    			
+	    			else{
+	    				
+	    				this.matrize[errenka][zutabe] = new Zenbakizkoa();
+	    				((Zenbakizkoa ) this.matrize[errenka][zutabe]).setZenb(zenbatMina);
+	    			}
+    			}
+    		}
+    	}
+    }
+    
+    
+    private int ingurukoMinaKopurua(int pErrenka, int pZutabe){
+    	
+    	int kopuru = 0;
+    	
+    	kopuru += albokoaMinaDa(pErrenka-1, pZutabe-1);
+    	kopuru += albokoaMinaDa(pErrenka-1, pZutabe);
+    	kopuru += albokoaMinaDa(pErrenka-1, pZutabe+1);
+    	kopuru += albokoaMinaDa(pErrenka, pZutabe-1);
+    	kopuru += albokoaMinaDa(pErrenka, pZutabe+1);
+    	kopuru += albokoaMinaDa(pErrenka+1, pZutabe-1);
+    	kopuru += albokoaMinaDa(pErrenka+1, pZutabe);
+    	kopuru += albokoaMinaDa(pErrenka+1, pZutabe+1);
+    	
+    
+    	
+    	return kopuru;
+    }
     		
     	
+    private int albokoaMinaDa(int pErrenka, int pZutabe){
+    	
+    	if( (pErrenka > -1) && (pZutabe > -1) && (pErrenka < this.matrize.length) &&
+    			(pZutabe < this.matrize[0].length) && this.matrize[pErrenka][pZutabe] instanceof Mina){
+    		
+    		return 1;
+    	}
+    	
+    	else{ 
+    		
+    		return 0;
+    	}
+    }
 		 
 
-		 /*
-		 for (int i = 0; i < probak; i++){
-			 
-			 //Auzazko zenbakiak hartzen
-			 a = ausazkoak.nextInt(grafokoElemGuztiak.length); // 0-tik (luzera-1)-rainoko zenbakiak
-			 b = ausazkoak.nextInt(grafokoElemGuztiak.length); // 0-tik (luzera-1)-rainoko zenbakiak
-		
-			 //Ausazko elementuak hartzen grafotik
-			 zine1 = grafokoElemGuztiak[a];
-			 zine2 = grafokoElemGuztiak[b];
-			 
-			 if( !zine1.equals(zine2) ){ //Aurrebaldintza: ez da elementu berbera sartuko metodoan
-			 
-				 //konektatuta metodoaren exekuzio denbora aztertzen
-				 System.out.print("\n"+i +". Konetatuta froga empirikoa: "+zine1.getIzena()+" eta "+zine2.getIzena()+
-						 "konektatuta? ");
-				 Stopwatch kronometroa = new Stopwatch();
-				 erantz = gHau.konektatuta(zine1, zine2);
-				 hartuta = kronometroa.elapsedTime();
-				 System.out.println(erantz);
-				 System.out.println("\nTardatutako denbora: "+hartuta+" segundu.\n");
-				 
-				 if( hartuta > maximoa ){
-					 
-					 maximoa = hartuta;
-    	 */
-    
+
 }
