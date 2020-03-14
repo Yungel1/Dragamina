@@ -4,4 +4,7 @@ public class EzEstalita implements Estaltzea{
     public EzEstalita(){
         
     }
+    public void desestali() {
+        
+    }
 }
