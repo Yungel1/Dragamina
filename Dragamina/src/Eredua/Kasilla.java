@@ -5,7 +5,10 @@ abstract class Kasilla {
     public Kasilla(){
         egoera=new Estalita();
     }
-    public void aldatuEgoera(String pEgoera){
+    public void aldatuEgoera(Estaltzea pEgoera){
+        this.egoera=pEgoera;
+    }
+    public void desestali(){
         
     }
 }

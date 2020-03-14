@@ -8,8 +8,9 @@ public class DragaminaGestorea extends Observable{
     private DragaminaGestorea(){
         
     }
-    public static Dragamina getNireDragaminaGestorea(){
-        
+    public static DragaminaGestorea getNireDragaminaGestorea(){
+        if(nireGestorea==null)nireGestorea=new DragaminaGestorea();
+        return nireGestorea;
     }
     public int aktibatutakoaKudeatu(int pErrenkada,int pZutabea){
         //-1 a 8

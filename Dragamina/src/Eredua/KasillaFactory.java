@@ -6,7 +6,8 @@ public class KasillaFactory {
         
     }
     public KasillaFactory getKasillaFactory(){
-        
+        if (nireKasillaFactory==null)nireKasillaFactory=new KasillaFactory();
+        return nireKasillaFactory;
     }
     public Kasilla sortuKasilla(String mota){
         
