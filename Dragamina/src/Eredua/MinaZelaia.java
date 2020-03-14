@@ -1,7 +1,8 @@
 package Eredua;
 
 public abstract class MinaZelaia {
-    private Matrizea zelaia;
+    protected Matrizea zelaia;
+    protected int zailtasuna;
     public MinaZelaia(){
         
     }
