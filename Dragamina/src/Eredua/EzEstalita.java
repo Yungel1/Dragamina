@@ -5,6 +5,5 @@ public class EzEstalita implements Estaltzea{
         
     }
     public void desestali() {
-        
     }
 }
