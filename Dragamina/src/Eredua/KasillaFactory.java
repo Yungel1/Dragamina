@@ -1,11 +1,11 @@
 package Eredua;
 
 public class KasillaFactory {
-    private KasillaFactory nireKasillaFactory;
+    private static KasillaFactory nireKasillaFactory;
     private KasillaFactory(){
         
     }
-    public KasillaFactory getKasillaFactory(){
+    public static synchronized KasillaFactory getKasillaFactory(){
         if (nireKasillaFactory==null)nireKasillaFactory=new KasillaFactory();
         return nireKasillaFactory;
     }

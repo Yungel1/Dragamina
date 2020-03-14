@@ -5,7 +5,7 @@ public class FactoryZailtasuna {
     private FactoryZailtasuna(){
         
     }
-    public static FactoryZailtasuna getNireFactoryZailtasuna(){
+    public static synchronized FactoryZailtasuna getNireFactoryZailtasuna(){
         if(nireFactoryZail==null)nireFactoryZail=new FactoryZailtasuna();
         return nireFactoryZail;
     }
