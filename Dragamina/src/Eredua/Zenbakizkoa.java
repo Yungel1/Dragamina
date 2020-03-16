@@ -10,4 +10,7 @@ public class Zenbakizkoa extends Kasilla {
     public void setZenb(int pZenb){
         this.zenb=pZenb;
     }
+    public int getZenb(){
+        return this.zenb;
+    }
 }
