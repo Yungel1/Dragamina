@@ -9,7 +9,7 @@ public class Matrizea {
     	
     	this.matrize = new Kasilla[pErrenkadaKop][pZutabeKop]; 
     	this.minakEsleitu(pZailtasuna);
-    	this.besteKasillakEsleitu(); //asdfasdfa
+    	this.besteKasillakEsleitu(); //cambio para mikel
     }
     
     
