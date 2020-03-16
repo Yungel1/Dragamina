@@ -27,8 +27,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class proba1 {
+public class BistaDiagrama implements Observer {
 
 	private JFrame frame;
 	private JPanel panel;
@@ -49,7 +51,7 @@ public class proba1 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					proba1 window = new proba1();
+					BistaDiagrama window = new BistaDiagrama();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -58,10 +60,15 @@ public class proba1 {
 		});
 	}
 
+    @Override
+    public void update(Observable arg0, Object arg1) {
+        // TODO Auto-generated method stub
+        
+    }
 	/**
 	 * Create the application.
 	 */
-	public proba1() {
+	public BistaDiagrama() {
 		initialize();
 	}
 
