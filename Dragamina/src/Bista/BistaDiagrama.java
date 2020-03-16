@@ -70,6 +70,7 @@ public class BistaDiagrama implements Observer {
 	 */
 	public BistaDiagrama() {
 		initialize();
+		this.frame.setVisible(true);
 	}
 	public JFrame getFrame(){
 	    return this.frame;
