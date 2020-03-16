@@ -47,7 +47,7 @@ public class BistaDiagrama implements Observer {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -58,7 +58,7 @@ public class BistaDiagrama implements Observer {
 				}
 			}
 		});
-	}
+	}*/
 
     @Override
     public void update(Observable arg0, Object arg1) {
@@ -69,6 +69,16 @@ public class BistaDiagrama implements Observer {
 	 * Create the application.
 	 */
 	public BistaDiagrama() {
+	    EventQueue.invokeLater(new Runnable() {
+	        public void run() {
+	            try {
+	                BistaDiagrama window = new BistaDiagrama();
+	                window.frame.setVisible(true);
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    });
 		initialize();
 	}
 

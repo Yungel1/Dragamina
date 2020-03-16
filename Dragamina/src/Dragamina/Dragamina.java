@@ -1,10 +1,11 @@
 package Dragamina;
 
+import Bista.BistaDiagrama;
+
 public class Dragamina {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        BistaDiagrama bd=new BistaDiagrama();
     }
 
 }
