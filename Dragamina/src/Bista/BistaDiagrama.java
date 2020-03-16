@@ -69,19 +69,11 @@ public class BistaDiagrama implements Observer {
 	 * Create the application.
 	 */
 	public BistaDiagrama() {
-	    EventQueue.invokeLater(new Runnable() {
-	        public void run() {
-	            try {
-	                BistaDiagrama window = new BistaDiagrama();
-	                window.frame.setVisible(true);
-	            } catch (Exception e) {
-	                e.printStackTrace();
-	            }
-	        }
-	    });
 		initialize();
 	}
-
+	public JFrame getFrame(){
+	    return this.frame;
+	}
 	/**
 	 * Initialize the contents of the frame.
 	 */
