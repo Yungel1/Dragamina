@@ -9,12 +9,13 @@ public class Matrizea {
     	
     	this.matrize = new Kasilla[pErrenkadaKop][pZutabeKop]; 
     	this.minakEsleitu(pZailtasuna);
+    	this.besteKasillakEsleitu();
     }
     
     
     private void minakEsleitu(int pZailtasuna){
     	
-    	//Mina kopurua zutabe kopurua bider matrizearen zutabe kopurua izango da.
+    	//Mina kopurua zailtasuna bider matrizearen zutabe kopurua izango da.
     	int minaKop = pZailtasuna*this.matrize[0].length;
     	
     	Random ausazkoak = new Random();
@@ -32,7 +33,7 @@ public class Matrizea {
     		
     		if ( this.matrize[errenka][zutabe] == null){
     			
-    		this.matrize[errenka][zutabe] = KasillaFactory.getKasillaFactory().sortuKasilla("mina");
+    			this.matrize[errenka][zutabe] = KasillaFactory.getKasillaFactory().sortuKasilla("mina");
     			minaKop--;
     		}
     	}
