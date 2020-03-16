@@ -1,5 +1,5 @@
 package Eredua;
 
 public interface Estaltzea {
-    void desestali();
+    void desestali(Kasilla kas);
 }
