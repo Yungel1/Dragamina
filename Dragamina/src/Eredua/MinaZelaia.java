@@ -6,4 +6,10 @@ public abstract class MinaZelaia {
     public MinaZelaia(){
         
     }
+    public int getErrenkada(){
+        return zelaia.getErrenkadaKop();
+    }
+    public int getZutabea(){
+        return zelaia.getZutabeKop();
+    }
 }
