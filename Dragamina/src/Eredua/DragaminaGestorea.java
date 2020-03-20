@@ -7,8 +7,6 @@ public class DragaminaGestorea extends Observable{
     private static DragaminaGestorea nireGestorea;
     private DragaminaGestorea(){
         this.zelaia=FactoryZailtasuna.getNireFactoryZailtasuna().zelaiaSortu(1);//Hau bigarren sprintean aldatuko da
-        super.setChanged();
-        super.notifyObservers();
     }
     public static DragaminaGestorea getNireDragaminaGestorea(){
         if(nireGestorea==null)nireGestorea=new DragaminaGestorea();
@@ -23,8 +21,7 @@ public class DragaminaGestorea extends Observable{
     public int aktibatutakoaKudeatu(int pErrenkada,int pZutabea){
         //-1 a 8
     }
-    private boolean minaDago(int pErrenkada,int pZutabea){
+    public Kasilla lortuKasilla(int pErrenkada,int pZutabea){
         
     }
-    
 }
