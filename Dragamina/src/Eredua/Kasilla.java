@@ -1,6 +1,6 @@
 package Eredua;
 
-abstract class Kasilla {
+public abstract class Kasilla {
     private Estaltzea egoera;
     public Kasilla(){
         egoera=new Estalita();
