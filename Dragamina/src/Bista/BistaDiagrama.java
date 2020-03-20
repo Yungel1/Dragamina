@@ -9,6 +9,12 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import Eredua.DragaminaGestorea;
+import Eredua.Estaltzea;
+import Eredua.EzEstalita;
+import Eredua.Hutsa;
+import Eredua.Kasilla;
+import Eredua.Mina;
+import Eredua.Zenbakizkoa;
 
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -64,7 +70,57 @@ public class BistaDiagrama implements Observer {
 
     @Override
     public void update(Observable arg0, Object arg1) {
-        // TODO Auto-generated method stub   
+        
+    	this.kudeatu((DragaminaGestorea)arg0);   
+    }
+    private void kudeatu(DragaminaGestorea drag) {
+    	int x;
+    	int y;
+    	for (x = 0; x < drag.getErrenkada(); x++) {
+			for (y = 0; y < drag.getZutabea(); y++) {
+				Kasilla kas=drag.lortuKasilla(x, y);
+				Estaltzea est=kas.getEstaltzea();
+				if(est instanceof EzEstalita ) {
+				  	if(kas instanceof Mina) {
+				  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
+				  	}
+				  	else if(kas instanceof Hutsa) {
+				  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c0.gif")));
+				  	}
+				  	else if(kas instanceof Zenbakizkoa) {
+				  		int emaitza= ((Zenbakizkoa)kas).getZenb();
+				  		switch(emaitza) {
+				  		case 1:
+				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c1.gif")));
+				  			break;
+				  		case 2:
+				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c2.gif")));
+				  			break;
+				  		case 3:
+				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c3.gif")));
+				  			break;
+				  		case 4:
+				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c4.gif")));
+				  			break;
+				  		case 5:
+				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c5.gif")));
+				  			break;
+				  		case 6:
+				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c6.gif")));
+				  			break;
+				  		case 7:
+				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c7.gif")));
+				  			break;
+				  		case 8:
+				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c8.gif")));
+				  			break;
+				  	}
+				  		
+				  		}
+				}
+    	 
+			}
+    	}
     }
 	/**
 	 * Create the application.
@@ -87,7 +143,7 @@ public class BistaDiagrama implements Observer {
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
 		frame.getContentPane().add(getPanel(), BorderLayout.NORTH);
 		frame.getContentPane().add(getPanel_1(), BorderLayout.CENTER);
-		this.hasieratu(7, 10);
+		this.hasieratu(dragamina.getErrenkada(), dragamina.getZutabea());
 	}
 
 	private JPanel getPanel() {
@@ -124,7 +180,7 @@ public class BistaDiagrama implements Observer {
 	}
 	public JLabel[][] getLista(){
 		if(lista==null) {
-			return this.lista=new JLabel[7][10];
+			return this.lista=new JLabel[dragamina.getErrenkada()][dragamina.getZutabea()];
 		}
 		else {
 			return lista;
@@ -150,11 +206,15 @@ public class BistaDiagrama implements Observer {
 	
 	private JLabel getBtnCarita() {
 		if (btnCarita == null) {
+			
 			btnCarita = new JLabel("");
 			btnCarita.setIcon(new ImageIcon(this.getClass().getResource("cara1.gif")));
 		}
 		return btnCarita;
 	}
+	
+	
+	
 	
 	private class Controlador extends MouseAdapter{
 		//Botoia sakatzu gero, ereduko "estaBerde" aldatuko du
@@ -165,14 +225,20 @@ public class BistaDiagrama implements Observer {
 				JLabel gelaxka=(JLabel) e.getSource();
 				int y;
 				int x;
+				int xemaitza;
+				int yemaitza;
 				lista=getLista();
 				  for (x = 0; x < lista.length; x++) {
 						for (y = 0; y < lista[0].length; y++) {
 							if(lista[x][y].equals(gelaxka)) {
-								lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
+								xemaitza=x;
+								yemaitza=y;
+								dragamina.aktibatutakoaKudeatu(xemaitza,yemaitza);
+								//lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
 							}
 						}
 					  }
+				  
 
 				//lista[1][1].setIcon(new ImageIcon(this.getClass().getResource("34ed1783bb2ddd660686ac6a685270bf.jpg")));
 				//System.out.println(e.getPoint());

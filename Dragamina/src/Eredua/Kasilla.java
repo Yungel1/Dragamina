@@ -1,6 +1,6 @@
 package Eredua;
 
-abstract class Kasilla {
+public abstract class Kasilla {
     private Estaltzea egoera;
     public Kasilla(){
         egoera=new Estalita();
@@ -10,5 +10,8 @@ abstract class Kasilla {
     }
     public void desestali(){
         egoera.desestali(this);
+    }
+    public Estaltzea getEstaltzea(){
+        return this.egoera;
     }
 }
