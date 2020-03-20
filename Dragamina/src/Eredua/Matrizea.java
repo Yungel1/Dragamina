@@ -81,7 +81,8 @@ public class Matrizea {
     	kopuru += albokoaMinaDa(pErrenka+1, pZutabe);
     	kopuru += albokoaMinaDa(pErrenka+1, pZutabe+1);
     	
-    
+    //djsfasjdfhaksd
+    	//Pibes chorros!!
     	
     	return kopuru;
     }
@@ -100,6 +101,28 @@ public class Matrizea {
     		return 0;
     	}
     }
+    
+    
+    public int getErrenkadaKop(){
+    	
+    	return this.matrize.length;
+    }
+    
+    public int getZutabeKop(){
+    	
+    	return this.matrize[0].length;
+    }
+    
+    
+    /*
+     * private void desestali(int pErrenka, int pZutabe){
+     * 
+     * 		
+     * 
+     * 		
+     * }
+     */
+     
 		 
 
 
