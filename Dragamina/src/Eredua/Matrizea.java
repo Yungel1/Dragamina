@@ -1,6 +1,12 @@
 package Eredua;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
+
+
 
 public class Matrizea {
     private Kasilla[][] matrize;
@@ -108,21 +114,85 @@ public class Matrizea {
     	return this.matrize.length;
     }
     
+    
+    
     public int getZutabeKop(){
     	
     	return this.matrize[0].length;
     }
     
     
-    /*
-     * private void desestali(int pErrenka, int pZutabe){
-     * 
-     * 		
-     * 
-     * 		
-     * }
-     */
-     
+    
+    public void desestali(int pErrenka, int pZutabe){
+    	
+    
+    	if(this.matrize[pErrenka][pZutabe] instanceof Hutsa){
+    		
+    		this.hutsakDesestali(pErrenka, pZutabe);
+    	}
+    	
+    	else{
+    		
+    		this.matrize[pErrenka][pZutabe].desestali();
+    	}	
+    }
+    
+    private void hutsakDesestali(int pErrenka, int pZutabe){
+    	
+    	 Kasilla hasierakoa		  	= this.matrize[pErrenka][pZutabe];
+    	 Kasilla unekoa	   			= hasierakoa;
+    	 
+    	 Queue<Kasilla>		aztertuGabeak		=	new LinkedList<Kasilla>();
+		 HashSet<Kasilla>	aztertuak			=	new HashSet<Kasilla>();
+		 
+		 aztertuak.add(unekoa);
+		 aztertuGabeak.add(unekoa);
+		 
+		 while ( !aztertuGabeak.isEmpty()){
+		    	
+		    	unekoa = aztertuGabeak.remove();
+		    	
+		    	
+		    	
+		    	if(unekoa instanceof Hutsa){
+		    		
+		    		unekoa.desestali();
+		    		
+		    		
+		    		prozesatuHutsa(pErrenka-1, pZutabe-1, aztertuGabeak, aztertuak);
+		    		prozesatuHutsa(pErrenka-1, pZutabe, aztertuGabeak, aztertuak);
+		    		prozesatuHutsa(pErrenka-1, pZutabe+1, aztertuGabeak, aztertuak);
+		    		prozesatuHutsa(pErrenka, pZutabe-1, aztertuGabeak, aztertuak);
+		    		prozesatuHutsa(pErrenka, pZutabe+1, aztertuGabeak, aztertuak);
+		    		prozesatuHutsa(pErrenka+1, pZutabe-1, aztertuGabeak, aztertuak);
+		    		prozesatuHutsa(pErrenka+1, pZutabe, aztertuGabeak, aztertuak);
+		    		prozesatuHutsa(pErrenka+1, pZutabe+1, aztertuGabeak, aztertuak);
+
+		    	}
+		 }
+    }
+
+	
+	 private void prozesatuHutsa( int pErrenka, int pZutabe, Queue<Kasilla>	 pAztertuGabeak, 
+				HashSet<Kasilla> pAztertuak){
+
+
+		if( (pErrenka > -1) && (pZutabe > -1) && (pErrenka < this.matrize.length) &&
+    			(pZutabe < this.matrize[0].length)&&!pAztertuak.contains(this.matrize[pErrenka][pZutabe]) ){
+		
+			pAztertuGabeak.add(this.matrize[pErrenka][pZutabe]);
+			pAztertuak.add(this.matrize[pErrenka][pZutabe]);
+		
+		}			
+    }
+    	
+    	
+
+    	
+  
+    
+    
+
 		 
 
 
