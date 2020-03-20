@@ -1,12 +1,13 @@
 package Dragamina;
 
 import Bista.BistaDiagrama;
+import Eredua.DragaminaGestorea;
 
 public class Dragamina {
 
     public static void main(String[] args) {
-        BistaDiagrama bd=new BistaDiagrama();
-        bd.getFrame().setVisible(true);
+        DragaminaGestorea dg=DragaminaGestorea.getNireDragaminaGestorea();
+        BistaDiagrama bd=new BistaDiagrama(dg);
     }
 
 }

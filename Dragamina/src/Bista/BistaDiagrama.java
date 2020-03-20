@@ -8,7 +8,7 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
-
+import Eredua.DragaminaGestorea;
 
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -32,6 +32,8 @@ import java.util.Observer;
 
 public class BistaDiagrama implements Observer {
 
+    private DragaminaGestorea dragamina;
+    
 	private JFrame frame;
 	private JPanel panel;
 	private JPanel panel_1;
@@ -62,14 +64,15 @@ public class BistaDiagrama implements Observer {
 
     @Override
     public void update(Observable arg0, Object arg1) {
-        // TODO Auto-generated method stub
-        
+        // TODO Auto-generated method stub   
     }
 	/**
 	 * Create the application.
 	 */
-	public BistaDiagrama() {
+	public BistaDiagrama(Observable pDragaminaGestorea) {
+	    this.dragamina=(DragaminaGestorea)pDragaminaGestorea;
 		initialize();
+		this.frame.setVisible(true);
 	}
 	public JFrame getFrame(){
 	    return this.frame;
