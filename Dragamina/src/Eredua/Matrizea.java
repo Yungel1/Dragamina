@@ -100,6 +100,28 @@ public class Matrizea {
     		return 0;
     	}
     }
+    
+    
+    public int getErrenkadaKop(){
+    	
+    	return this.matrize.length;
+    }
+    
+    public int getZutabeKop(){
+    	
+    	return this.matrize[0].length;
+    }
+    
+    
+    /*
+     * private void desestali(int pErrenka, int pZutabe){
+     * 
+     * 		
+     * 
+     * 		
+     * }
+     */
+     
 		 
 
 
