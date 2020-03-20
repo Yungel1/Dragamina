@@ -11,4 +11,7 @@ abstract class Kasilla {
     public void desestali(){
         egoera.desestali(this);
     }
+    public Estaltzea getEstaltzea(){
+        return this.egoera;
+    }
 }
