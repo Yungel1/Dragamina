@@ -81,7 +81,8 @@ public class Matrizea {
     	kopuru += albokoaMinaDa(pErrenka+1, pZutabe);
     	kopuru += albokoaMinaDa(pErrenka+1, pZutabe+1);
     	
-    //jejejejeje
+    //djsfasjdfhaksd
+    	//Pibes chorros!!
     	
     	return kopuru;
     }
