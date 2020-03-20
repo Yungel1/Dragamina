@@ -70,7 +70,6 @@ public class BistaDiagrama implements Observer {
 
     @Override
     public void update(Observable arg0, Object arg1) {
-        
     	this.kudeatu((DragaminaGestorea)arg0);   
     }
     private void kudeatu(DragaminaGestorea drag) {
@@ -127,6 +126,7 @@ public class BistaDiagrama implements Observer {
 	 */
 	public BistaDiagrama(Observable pDragaminaGestorea) {
 	    this.dragamina=(DragaminaGestorea)pDragaminaGestorea;
+	    this.dragamina.addObserver(this);
 		initialize();
 		this.frame.setVisible(true);
 	}

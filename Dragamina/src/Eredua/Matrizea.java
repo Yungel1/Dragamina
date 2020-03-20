@@ -18,6 +18,9 @@ public class Matrizea {
     	this.besteKasillakEsleitu(); //cambio para mikel
     }
     
+    public Kasilla lortuKasilla(int pErrenkada,int pZutabea){
+        return matrize[pErrenkada][pZutabea];
+    }
     
     private void minakEsleitu(int pZailtasuna){
     	
@@ -125,7 +128,6 @@ public class Matrizea {
     
     public void desestali(int pErrenka, int pZutabe){
     	
-    
     	if(this.matrize[pErrenka][pZutabe] instanceof Hutsa){
     		
     		this.hutsakDesestali(pErrenka, pZutabe);
