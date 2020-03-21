@@ -15,7 +15,8 @@ public class Matrizea {
     	
     	this.matrize = new Kasilla[pErrenkadaKop][pZutabeKop]; 
     	this.minakEsleitu(pZailtasuna);
-    	this.besteKasillakEsleitu(); //cambio para mikel
+    	this.besteKasillakEsleitu(); 
+    	this.printKasillak();
     }
     
     public Kasilla lortuKasilla(int pErrenkada,int pZutabea){
@@ -35,7 +36,7 @@ public class Matrizea {
    
     	
     	
-    	while(minaKop != 0 ){
+    	while(minaKop > 0 ){
     		
     		errenka = ausazkoak.nextInt(this.matrize.length);
     		zutabe	= ausazkoak.nextInt(this.matrize[0].length);
@@ -57,7 +58,9 @@ public class Matrizea {
     		
     		for(int zutabe = 0; zutabe < this.matrize[0].length; zutabe++){
     			
-    			if( !( this.matrize[errenka][zutabe] instanceof Mina) ){
+    			zenbatMina = 0;
+    			
+    			if( this.matrize[errenka][zutabe] == null ){// !( this.matrize[errenka][zutabe] instanceof Mina)
     				
     				zenbatMina = ingurukoMinaKopurua(errenka, zutabe);
     			
@@ -90,8 +93,7 @@ public class Matrizea {
     	kopuru += albokoaMinaDa(pErrenka+1, pZutabe);
     	kopuru += albokoaMinaDa(pErrenka+1, pZutabe+1);
     	
-    //djsfasjdfhaksd
-    	//Pibes chorros!!
+ 
     	
     	return kopuru;
     }
@@ -100,7 +102,8 @@ public class Matrizea {
     private int albokoaMinaDa(int pErrenka, int pZutabe){
     	
     	if( (pErrenka > -1) && (pZutabe > -1) && (pErrenka < this.matrize.length) &&
-    			(pZutabe < this.matrize[0].length) && this.matrize[pErrenka][pZutabe] instanceof Mina){
+    			(pZutabe < this.matrize[0].length) &&(this.matrize[pErrenka][pZutabe] != null)&&
+    			   this.matrize[pErrenka][pZutabe] instanceof Mina){
     		
     		return 1;
     	}
@@ -180,7 +183,8 @@ public class Matrizea {
 
 
 		if( (pErrenka > -1) && (pZutabe > -1) && (pErrenka < this.matrize.length) &&
-    			(pZutabe < this.matrize[0].length)&&!pAztertuak.contains(this.matrize[pErrenka][pZutabe]) ){
+    			(pZutabe < this.matrize[0].length)&&!pAztertuak.contains(this.matrize[pErrenka][pZutabe])&&
+    			  (this.matrize[pErrenka][pZutabe]).getEstaltzea() instanceof Estalita){
 		
 			pAztertuGabeak.add(this.matrize[pErrenka][pZutabe]);
 			pAztertuak.add(this.matrize[pErrenka][pZutabe]);
@@ -189,7 +193,73 @@ public class Matrizea {
     }
     	
     	
-
+	public void printKasillak(){
+		
+		for(int errenka = 0; errenka < this.matrize.length; errenka++){
+			
+			System.out.println("\n");
+			for(int zutabe = 0; zutabe < this.matrize[0].length; zutabe++){
+				
+				if (this.matrize[errenka][zutabe] instanceof Mina){
+					
+					System.out.print("-1\t");
+	    			}
+				
+				else if(this.matrize[errenka][zutabe] instanceof Zenbakizkoa){
+					
+					int zenbat = ((Zenbakizkoa)this.matrize[errenka][zutabe]).getZenb();
+					
+					switch(zenbat){
+					
+						case 1:
+							System.out.print("1\t");
+							break;
+							
+						case 2:
+							System.out.print("2\t");
+							break;
+							
+						case 3:
+							System.out.print("3\t");
+							break;
+							
+						case 4:
+							System.out.print("4\t");
+							break;
+							
+						case 5:
+							System.out.print("5\t");
+							break;
+							
+						case 6:
+							System.out.print("6\t");
+							break;
+							
+						case 7:
+							System.out.print("7\t");
+							break;
+							
+						case 8:
+							System.out.print("8\t");
+					}
+				}
+				
+				else if(this.matrize[errenka][zutabe] instanceof Hutsa){
+					
+					System.out.print("0\t");
+				}
+					
+				else{ 
+					
+					System.out.print("F\t");
+					
+				}
+			}
+		}
+		
+		System.out.println("\n");
+		
+	}
     	
   
     
