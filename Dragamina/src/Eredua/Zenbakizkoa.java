@@ -4,8 +4,9 @@ public class Zenbakizkoa extends Kasilla {
     
     int zenb=0;
     
-    public Zenbakizkoa(){
-        
+    public Zenbakizkoa(int pErrenka, int pZutabe){
+    	
+    	super(pErrenka, pZutabe);
     }
     public void setZenb(int pZenb){
         this.zenb=pZenb;

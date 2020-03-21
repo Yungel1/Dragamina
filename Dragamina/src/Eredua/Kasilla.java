@@ -1,8 +1,15 @@
 package Eredua;
 
 public abstract class Kasilla {
+	
     private Estaltzea egoera;
-    public Kasilla(){
+    protected int posErrenka;
+    protected int posZutabe;
+    
+    public Kasilla(int pErrenka, int pZutabe){
+    	
+    	posErrenka = pErrenka;
+    	posZutabe  = pZutabe;
         egoera=new Estalita();
     }
     public void aldatuEgoera(Estaltzea pEgoera){
@@ -13,6 +20,16 @@ public abstract class Kasilla {
     }
     public Estaltzea getEstaltzea(){
         return this.egoera;
+    }
+    
+    public int getErrenkada(){
+    	
+    	return this.posErrenka;
+    }
+    
+    public int getZutabe(){
+    	
+    	return this.posZutabe;
     }
     
     public abstract void printKasillaMota();

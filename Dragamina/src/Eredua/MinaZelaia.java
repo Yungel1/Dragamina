@@ -12,8 +12,8 @@ public abstract class MinaZelaia {
     public int getZutabea(){
         return zelaia.getZutabeKop();
     }
-    public Kasilla lortuKasilla(int pErrenkada,int pZutabea){
-        return zelaia.lortuKasilla(pErrenkada, pErrenkada);
+    public Kasilla lortuKasilla(int pErrenkada, int pZutabea){
+        return zelaia.lortuKasilla(pErrenkada, pZutabea);
     }
     public void desestali(int pErrenka, int pZutabe){
         zelaia.desestali(pErrenka, pZutabe);

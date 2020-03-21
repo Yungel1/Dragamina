@@ -43,7 +43,7 @@ public class Matrizea {
     		
     		if ( this.matrize[errenka][zutabe] == null){
     			
-    			this.matrize[errenka][zutabe] = KasillaFactory.getKasillaFactory().sortuKasilla("mina");
+    			this.matrize[errenka][zutabe] = KasillaFactory.getKasillaFactory().sortuKasilla("mina", errenka, zutabe );
     			minaKop--;
     		}
     	}
@@ -66,12 +66,12 @@ public class Matrizea {
     			
 	    			if( zenbatMina == 0){
 	    				
-	    				this.matrize[errenka][zutabe] = new Hutsa();
+	    				this.matrize[errenka][zutabe] = KasillaFactory.getKasillaFactory().sortuKasilla("hutsa", errenka, zutabe );
 	    			}
 	    			
 	    			else{
 	    				
-	    				this.matrize[errenka][zutabe] = new Zenbakizkoa();
+	    				this.matrize[errenka][zutabe] = KasillaFactory.getKasillaFactory().sortuKasilla("zenbakizkoa", errenka, zutabe );
 	    				((Zenbakizkoa ) this.matrize[errenka][zutabe]).setZenb(zenbatMina);
 	    			}
     			}
@@ -133,7 +133,7 @@ public class Matrizea {
     	
     	if(this.matrize[pErrenka][pZutabe] instanceof Hutsa){
     		
-    		this.hutsakDesestali(pErrenka, pZutabe);
+    		this.desestaliHutsaDenean(pErrenka, pZutabe);
     	}
     	
     	else{
@@ -142,7 +142,9 @@ public class Matrizea {
     	}	
     }
     
-    private void hutsakDesestali(int pErrenka, int pZutabe){
+    private void desestaliHutsaDenean(int pErrenka, int pZutabe){
+    	
+    	//Honen bidez, alboko zenbakizkoak eta hutsak desestaliko dira.
     	
     	 Kasilla hasierakoa		  	= this.matrize[pErrenka][pZutabe];
     	 Kasilla unekoa	   			= hasierakoa;
@@ -153,25 +155,31 @@ public class Matrizea {
 		 aztertuak.add(unekoa);
 		 aztertuGabeak.add(unekoa);
 		 
+		 int errenka = pErrenka;
+		 int zutabe	 = pZutabe;
+		 
 		 while ( !aztertuGabeak.isEmpty()){
 		    	
 		    	unekoa = aztertuGabeak.remove();
 		    	
+		    	errenka = unekoa.getErrenkada();
+		    	zutabe  = unekoa.getZutabe();
 		    	
-		    	
-		    	if(unekoa instanceof Hutsa){
+		    	if(!(unekoa instanceof Mina)){
 		    		
 		    		unekoa.desestali();
 		    		
-		    		
-		    		prozesatuHutsa(pErrenka-1, pZutabe-1, aztertuGabeak, aztertuak);
-		    		prozesatuHutsa(pErrenka-1, pZutabe, aztertuGabeak, aztertuak);
-		    		prozesatuHutsa(pErrenka-1, pZutabe+1, aztertuGabeak, aztertuak);
-		    		prozesatuHutsa(pErrenka, pZutabe-1, aztertuGabeak, aztertuak);
-		    		prozesatuHutsa(pErrenka, pZutabe+1, aztertuGabeak, aztertuak);
-		    		prozesatuHutsa(pErrenka+1, pZutabe-1, aztertuGabeak, aztertuak);
-		    		prozesatuHutsa(pErrenka+1, pZutabe, aztertuGabeak, aztertuak);
-		    		prozesatuHutsa(pErrenka+1, pZutabe+1, aztertuGabeak, aztertuak);
+		    		if(unekoa instanceof Hutsa){
+			    		
+			    		prozesatuHutsa(errenka-1, zutabe-1, aztertuGabeak, aztertuak);
+			    		prozesatuHutsa(errenka-1, zutabe, aztertuGabeak, aztertuak);
+			    		prozesatuHutsa(errenka-1, zutabe+1, aztertuGabeak, aztertuak);
+			    		prozesatuHutsa(errenka, zutabe-1, aztertuGabeak, aztertuak);
+			    		prozesatuHutsa(errenka, zutabe+1, aztertuGabeak, aztertuak);
+			    		prozesatuHutsa(errenka+1, zutabe-1, aztertuGabeak, aztertuak);
+			    		prozesatuHutsa(errenka+1, zutabe, aztertuGabeak, aztertuak);
+			    		prozesatuHutsa(errenka+1, zutabe+1, aztertuGabeak, aztertuak);
+		    		}
 
 		    	}
 		 }
