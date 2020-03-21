@@ -18,4 +18,12 @@ public abstract class MinaZelaia {
     public void desestali(int pErrenka, int pZutabe){
         zelaia.desestali(pErrenka, pZutabe);
     }
+    
+    
+    
+    /*Proba metodoak*/
+ 	public void printKasillak(){
+ 		
+ 		this.zelaia.printKasillak();
+ 	}
 }

@@ -14,4 +14,8 @@ public abstract class Kasilla {
     public Estaltzea getEstaltzea(){
         return this.egoera;
     }
+    
+    public abstract void printKasillaMota();
+    	
+   
 }

@@ -191,7 +191,7 @@ public class Matrizea {
 		
 		}			
     }
-    	
+    /*	
     	
 	public void printKasillak(){
 		
@@ -254,12 +254,94 @@ public class Matrizea {
 					System.out.print("F\t");
 					
 				}
+				
+				
 			}
 		}
 		
 		System.out.println("\n");
 		
 	}
+	
+	*/
+	 
+		public void printKasillak(){
+			
+			for(int errenka = 0; errenka < this.matrize.length; errenka++){
+				
+				System.out.println("\n");
+				for(int zutabe = 0; zutabe < this.matrize[0].length; zutabe++){
+					
+					if (this.matrize[errenka][zutabe] instanceof Mina){
+						
+						System.out.print("-1");
+		    			}
+					
+					else if(this.matrize[errenka][zutabe] instanceof Zenbakizkoa){
+						
+						int zenbat = ((Zenbakizkoa)this.matrize[errenka][zutabe]).getZenb();
+						
+						switch(zenbat){
+						
+							case 1:
+								System.out.print("1");
+								break;
+								
+							case 2:
+								System.out.print("2");
+								break;
+								
+							case 3:
+								System.out.print("3");
+								break;
+								
+							case 4:
+								System.out.print("4");
+								break;
+								
+							case 5:
+								System.out.print("5");
+								break;
+								
+							case 6:
+								System.out.print("6");
+								break;
+								
+							case 7:
+								System.out.print("7");
+								break;
+								
+							case 8:
+								System.out.print("8");
+						}
+					}
+					
+					else if(this.matrize[errenka][zutabe] instanceof Hutsa){
+						
+						System.out.print("0");
+					}
+						
+					else{ 
+						
+						System.out.print("F\t");
+						
+					}
+					
+					if(this.matrize[errenka][zutabe].getEstaltzea() instanceof Estalita){
+						System.out.print("E\t");
+					}
+					
+					else{
+						
+						System.out.print("D\t");
+					}
+					
+				}
+			}
+			
+			System.out.println("\n");
+			
+		}
     	
   
     

@@ -26,4 +26,10 @@ public class DragaminaGestorea extends Observable{
     public Kasilla lortuKasilla(int pErrenkada,int pZutabea){
         return zelaia.lortuKasilla(pErrenkada, pZutabea);
     }
+    
+    /*Proba metodoak*/
+	public void printKasillak(){
+		
+		this.zelaia.printKasillak();
+	}
 }

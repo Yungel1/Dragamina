@@ -6,5 +6,6 @@ public class Estalita implements Estaltzea{
     }
     public void desestali(Kasilla kas){
         kas.aldatuEgoera(new EzEstalita());
+        DragaminaGestorea.getNireDragaminaGestorea().printKasillak();
     }
 }

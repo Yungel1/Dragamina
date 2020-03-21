@@ -13,4 +13,9 @@ public class Zenbakizkoa extends Kasilla {
     public int getZenb(){
         return this.zenb;
     }
+    
+    public  void printKasillaMota(){
+    	
+    	System.out.println("Zenbaki bat naiz");
+    }
 }
