@@ -78,61 +78,60 @@ public class BistaDiagrama implements Observer {
     	int y;
     	for (x = 0; x < drag.getErrenkada(); x++) {
 			for (y = 0; y < drag.getZutabea(); y++) {
-				System.out.print(x+", "+y+" ");
+				
 				Kasilla kas=drag.lortuKasilla(x, y);
-				//kas.printKasillaMota();
 				Estaltzea est=kas.getEstaltzea();
-				//drag.printKasillak();
+				
 				if(est instanceof EzEstalita ) {
 				  	if(kas instanceof Mina) {
 				  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
-				  		System.out.println("Más clikau!!! mina");//BORRAR MALDITA SEA!!!
+				  	
 				  	}
 				  	else if(kas instanceof Hutsa) {
 				  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c0.gif")));
-				  		System.out.println("Más clikau!!! HUTSA");//BORRAR MALDITA SEA!!!
+				  		
 				  	}
 				  	else if(kas instanceof Zenbakizkoa) {
 				  		int emaitza= ((Zenbakizkoa)kas).getZenb();
 				  		switch(emaitza) {
 				  		case 1:
 				  			
-				  			System.out.println("Más clikau!!! 1");//BORRAR MALDITA SEA!!!
+				  			
 				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c1.gif")));
 				  			break;
 				  		case 2:
 				  			
-				  			System.out.println("Más clikau!!! 2");//BORRAR MALDITA SEA!!!
+				  			
 				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c2.gif")));
 				  			break;
 				  		case 3:
 				  			
-				  			System.out.println("Más clikau!!! 3");//BORRAR MALDITA SEA!!!
+				  			
 				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c3.gif")));
 				  			break;
 				  		case 4:
 				  			
-				  			System.out.println("Más clikau!!! 4");//BORRAR MALDITA SEA!!!
+				  			
 				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c4.gif")));
 				  			break;
 				  		case 5:
 				  			
-				  			System.out.println("Más clikau!!! 5");//BORRAR MALDITA SEA!!!
+				  			
 				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c5.gif")));
 				  			break;
 				  		case 6:
 				  			
-				  			System.out.println("Más clikau!!! 6");//BORRAR MALDITA SEA!!!
+				  			
 				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c6.gif")));
 				  			break;
 				  		case 7:
 				  			
-				  			System.out.println("Más clikau!!! 7");//BORRAR MALDITA SEA!!!
+				  			
 				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c7.gif")));
 				  			break;
 				  		case 8:
 				  			
-				  			System.out.println("Más clikau!!! 8");//BORRAR MALDITA SEA!!!
+				  			
 				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c8.gif")));
 				  			break;
 				  	}
