@@ -51,6 +51,7 @@ public class BistaDiagrama implements Observer {
 	private JLabel label_4;
 	private JLabel label_5;
 	private JLabel label_6;
+	private JLabel label_7;
 
 	/**
 	 * Launch the application.
@@ -72,21 +73,91 @@ public class BistaDiagrama implements Observer {
     public void update(Observable arg0, Object arg1) {
     	this.kudeatu((DragaminaGestorea)arg0);   
     }
+    private void lokartu() {
+    	try{
+  			Thread.sleep(5*1000);
+	  		}
+  		catch(InterruptedException e ) { 
+  			System.out.println("Thread Interrupted"); }
+
+  	
+    }
     private void kudeatu(DragaminaGestorea drag) {
     	
     	int x;
     	int y;
+    	int xe;
+    	int ye;
     	for (x = 0; x < drag.getErrenkada(); x++) {
 			for (y = 0; y < drag.getZutabea(); y++) {
 				
 				Kasilla kas=drag.lortuKasilla(x, y);
 				Estaltzea est=kas.getEstaltzea();
-				
+				xe=x;
+				ye=y;
 				if(est instanceof EzEstalita ) {
 				  	if(kas instanceof Mina) {
-				  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
-				  	
+				  		
+				  		for (x = 0; x < drag.getErrenkada(); x++) {
+							for (y = 0; y < drag.getZutabea(); y++) {
+									if(drag.lortuKasilla(x, y) instanceof Mina) {
+								  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-n.gif")));
+								}
+									else if(drag.lortuKasilla(x, y) instanceof Hutsa) {
+								  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c0.gif")));
+								  		
+								  	}
+								  	else if(drag.lortuKasilla(x, y) instanceof Zenbakizkoa) {
+								  		int emaitza= ((Zenbakizkoa)drag.lortuKasilla(x, y)).getZenb();
+								  		switch(emaitza) {
+								  		case 1:
+								  			
+								  			
+								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c1.gif")));
+								  			break;
+								  		case 2:
+								  			
+								  			
+								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c2.gif")));
+								  			break;
+								  		case 3:
+								  			
+								  			
+								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c3.gif")));
+								  			break;
+								  		case 4:
+								  			
+								  			
+								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c4.gif")));
+								  			break;
+								  		case 5:
+								  			
+								  			
+								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c5.gif")));
+								  			break;
+								  		case 6:
+								  			
+								  			
+								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c6.gif")));
+								  			break;
+								  		case 7:
+								  			
+								  			
+								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c7.gif")));
+								  			break;
+								  		case 8:
+								  			
+								  			
+								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c8.gif")));
+								  			break;
+								  	}
+								  	}
+								}
+							
+							}
+				  		lista[xe][ye].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
 				  	}
+				  	
 				  	else if(kas instanceof Hutsa) {
 				  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c0.gif")));
 				  		
@@ -138,9 +209,9 @@ public class BistaDiagrama implements Observer {
 				  		
 				  		}
 				}
-    	 
 			}
     	}
+    	
     }
 	/**
 	 * Create the application.
@@ -173,6 +244,7 @@ public class BistaDiagrama implements Observer {
 			panel.add(getLabel_1());
 			panel.add(getLabel_2());
 			panel.add(getLabel_3());
+			panel.add(getLabel_7());
 			panel.add(getBtnCarita());
 			panel.add(getLabel_6());
 			panel.add(getLabel_5());
@@ -241,9 +313,13 @@ public class BistaDiagrama implements Observer {
 		//Botoia sakatzu gero, ereduko "estaBerde" aldatuko du
 	
 		@Override
+		
 		public void mouseClicked(MouseEvent e) {
 			if ((e.getModifiers() & InputEvent.BUTTON1_MASK) != 0) {
 				JLabel gelaxka=(JLabel) e.getSource();
+				if(e.getSource().equals(getLabel_7())) {
+					System.exit(0);
+				}
 				int y;
 				int x;
 				int xemaitza;
@@ -312,6 +388,14 @@ public class BistaDiagrama implements Observer {
 			label_6.setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
 		}
 		return label_6;
+	}
+	private JLabel getLabel_7() {
+		if (label_7 == null) {
+			label_7 = new JLabel("");
+			label_7.setIcon(new ImageIcon(this.getClass().getResource("push-button-red-clip-art-button-png.jpg")));
+			label_7.addMouseListener(new Controlador());
+		}
+		return label_7;
 	}
 }
 
