@@ -3,6 +3,7 @@ package Eredua;
 public abstract class MinaZelaia {
     protected Matrizea zelaia;
     protected int zailtasuna;
+    
     public MinaZelaia(){
         
     }
@@ -18,7 +19,9 @@ public abstract class MinaZelaia {
     public void desestali(int pErrenka, int pZutabe){
         zelaia.desestali(pErrenka, pZutabe);
     }
-    
+    public int getMinaKop(){
+        return this.getZutabea()*this.zailtasuna;
+    }
     
     
     /*Proba metodoak*/

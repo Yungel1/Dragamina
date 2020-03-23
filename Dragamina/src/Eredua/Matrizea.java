@@ -199,6 +199,7 @@ public class Matrizea {
 		
 		}			
     }
+
     /*	
     	
 	public void printKasillak(){

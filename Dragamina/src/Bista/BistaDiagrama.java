@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import Eredua.DragaminaGestorea;
+import Eredua.Estalita;
 import Eredua.Estaltzea;
 import Eredua.EzEstalita;
 import Eredua.Hutsa;
@@ -39,6 +40,7 @@ import java.util.Observer;
 public class BistaDiagrama implements Observer {
 
     private DragaminaGestorea dragamina;
+    private int kasillaDesestalita=0;
     
 	private JFrame frame;
 	private JPanel panel;
@@ -73,15 +75,7 @@ public class BistaDiagrama implements Observer {
     public void update(Observable arg0, Object arg1) {
     	this.kudeatu((DragaminaGestorea)arg0);   
     }
-    private void lokartu() {
-    	try{
-  			Thread.sleep(5*1000);
-	  		}
-  		catch(InterruptedException e ) { 
-  			System.out.println("Thread Interrupted"); }
 
-  	
-    }
     private void kudeatu(DragaminaGestorea drag) {
     	
     	int x;
@@ -96,67 +90,19 @@ public class BistaDiagrama implements Observer {
 				xe=x;
 				ye=y;
 				if(est instanceof EzEstalita ) {
+                    this.kasillaDesestalita++;
 				  	if(kas instanceof Mina) {
-				  		
-				  		for (x = 0; x < drag.getErrenkada(); x++) {
-							for (y = 0; y < drag.getZutabea(); y++) {
-									if(drag.lortuKasilla(x, y) instanceof Mina) {
-								  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-n.gif")));
-								}
-									else if(drag.lortuKasilla(x, y) instanceof Hutsa) {
-								  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c0.gif")));
-								  		
-								  	}
-								  	else if(drag.lortuKasilla(x, y) instanceof Zenbakizkoa) {
-								  		int emaitza= ((Zenbakizkoa)drag.lortuKasilla(x, y)).getZenb();
-								  		switch(emaitza) {
-								  		case 1:
-								  			
-								  			
-								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c1.gif")));
-								  			break;
-								  		case 2:
-								  			
-								  			
-								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c2.gif")));
-								  			break;
-								  		case 3:
-								  			
-								  			
-								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c3.gif")));
-								  			break;
-								  		case 4:
-								  			
-								  			
-								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c4.gif")));
-								  			break;
-								  		case 5:
-								  			
-								  			
-								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c5.gif")));
-								  			break;
-								  		case 6:
-								  			
-								  			
-								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c6.gif")));
-								  			break;
-								  		case 7:
-								  			
-								  			
-								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c7.gif")));
-								  			break;
-								  		case 8:
-								  			
-								  			
-								  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c8.gif")));
-								  			break;
-								  	}
-								  	}
-								}
-							
-							}
-				  		lista[xe][ye].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
-				  	}
+				  	  for (x = 0; x < drag.getErrenkada(); x++) {
+                          for (y = 0; y < drag.getZutabea(); y++) {
+                              lista[x][y].removeMouseListener(lista[x][y].getMouseListeners()[0]);
+                                  if(drag.lortuKasilla(x, y) instanceof Mina) {
+                                      lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-n.gif")));
+                              }
+                              }
+                          
+                          }
+                      lista[xe][ye].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
+                  }
 				  	
 				  	else if(kas instanceof Hutsa) {
 				  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c0.gif")));
@@ -211,6 +157,14 @@ public class BistaDiagrama implements Observer {
 				}
 			}
     	}
+        if(drag.getErrenkada()*drag.getZutabea()-kasillaDesestalita==drag.getMinaKop()){
+          for (x = 0; x < drag.getErrenkada(); x++) {
+              for (y = 0; y < drag.getZutabea(); y++) {
+                  lista[x][y].removeMouseListener(lista[x][y].getMouseListeners()[0]);
+              }
+          }
+        }
+        this.kasillaDesestalita=0;
     	
     }
 	/**
@@ -310,7 +264,6 @@ public class BistaDiagrama implements Observer {
 	
 	
 	private class Controlador extends MouseAdapter{
-		//Botoia sakatzu gero, ereduko "estaBerde" aldatuko du
 	
 		@Override
 		
