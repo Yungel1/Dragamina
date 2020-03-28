@@ -25,8 +25,8 @@ public abstract class MinaZelaia {
     
     
     /*Proba metodoak*/
- 	public void printKasillak(){
+ 	/*public void printKasillak(){
  		
  		this.zelaia.printKasillak();
- 	}
+ 	}*/
 }

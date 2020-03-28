@@ -163,6 +163,8 @@ public class BistaDiagrama implements Observer {
                   lista[x][y].removeMouseListener(lista[x][y].getMouseListeners()[0]);
               }
           }
+          
+          System.out.println("\nIrabazi duzu!!!");
         }
         this.kasillaDesestalita=0;
     	

@@ -31,8 +31,8 @@ public class DragaminaGestorea extends Observable{
     }
     
     /*Proba metodoak*/
-	public void printKasillak(){
+	/*public void printKasillak(){
 		
 		this.zelaia.printKasillak();
-	}
+	}*/
 }
