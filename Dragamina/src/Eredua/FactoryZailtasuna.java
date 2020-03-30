@@ -11,8 +11,12 @@ public class FactoryZailtasuna {
     }
     public MinaZelaia zelaiaSortu(int pZailtasuna){
         switch(pZailtasuna){
-        default:
+        case(1):
             return new ZelaiErreza();
+        case(2):
+            return new ZelaiErtaina();
+        default:
+            return new ZelaiZaila();
         }
     }
 }
