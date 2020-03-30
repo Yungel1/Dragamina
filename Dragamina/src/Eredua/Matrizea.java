@@ -16,7 +16,7 @@ public class Matrizea {
     	this.matrize = new Kasilla[pErrenkadaKop][pZutabeKop]; 
     	this.minakEsleitu(pZailtasuna);
     	this.besteKasillakEsleitu(); 
-    	//this.printKasillak();
+    	this.printKasillak();
     }
     
     public Kasilla lortuKasilla(int pErrenkada,int pZutabea){
@@ -202,7 +202,7 @@ public class Matrizea {
 
 
 /****************Hauek programaren frogak egiteko erabili dira**********/
-	/*public void printKasillak(){
+	public void printKasillak(){
 		
 		for(int errenka = 0; errenka < this.matrize.length; errenka++){
 			
@@ -280,7 +280,7 @@ public class Matrizea {
 		
 	}
     	
-  */
+ 
     
     
 
