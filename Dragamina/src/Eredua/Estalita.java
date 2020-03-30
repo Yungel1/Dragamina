@@ -10,4 +10,8 @@ public class Estalita implements Estaltzea{
         kas.aldatuEgoera(new EzEstalita());
        // DragaminaGestorea.getNireDragaminaGestorea().printKasillak();
     }
+
+    public void markatu(Kasilla kas) {
+        kas.aldatuEgoera(new Bandera());
+    }
 }

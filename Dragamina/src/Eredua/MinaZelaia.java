@@ -22,7 +22,9 @@ public abstract class MinaZelaia {
     public int getMinaKop(){
         return this.getZutabea()*this.zailtasuna;
     }
-    
+    public void markatu(int pErrenkada,int pZutabea){
+        zelaia.markatu(pErrenkada,pZutabea);
+    }
     
     /*Proba metodoak*/
  	/*public void printKasillak(){

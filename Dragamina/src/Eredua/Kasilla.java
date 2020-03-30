@@ -12,12 +12,19 @@ public abstract class Kasilla {
     	posZutabe  = pZutabe;
         egoera=new Estalita();
     }
+    
     public void aldatuEgoera(Estaltzea pEgoera){
         this.egoera=pEgoera;
     }
+    
     public void desestali(){
         egoera.desestali(this);
     }
+    
+    public void markatu(){
+        egoera.markatu(this);
+    }
+    
     public Estaltzea getEstaltzea(){
         return this.egoera;
     }

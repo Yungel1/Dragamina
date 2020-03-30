@@ -29,6 +29,9 @@ public class DragaminaGestorea extends Observable{
     public int getMinaKop(){
         return zelaia.getMinaKop();
     }
+    public void markatu(int pErrenkada,int pZutabea){
+        zelaia.markatu(pErrenkada,pZutabea);
+    }
     
     /*Proba metodoak*/
 	/*public void printKasillak(){

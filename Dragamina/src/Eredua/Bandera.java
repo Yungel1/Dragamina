@@ -1,15 +1,12 @@
 package Eredua;
 
-public class EzEstalita implements Estaltzea{
-    public EzEstalita(){
-        
-    }
-    
+public class Bandera implements Estaltzea{
+
     public void desestali(Kasilla kas) {
         
     }
-    
+
     public void markatu(Kasilla kas) {
-        
+        kas.aldatuEgoera(new Estalita());
     }
 }

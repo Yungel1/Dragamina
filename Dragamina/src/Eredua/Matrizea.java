@@ -127,7 +127,9 @@ public class Matrizea {
     	return this.matrize[0].length;
     }
     
-    
+    public void markatu(int pErrenkada,int pZutabea){
+        //RELLENAR
+    }
     
     public void desestali(int pErrenka, int pZutabe){
     	
