@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class Matrizea {
     private Kasilla[][] matrize;
+    private int minaKop;
 
     public Matrizea(int pErrenkadaKop,int pZutabeKop, int pZailtasuna){
     	
@@ -26,7 +27,8 @@ public class Matrizea {
     private void minakEsleitu(int pZailtasuna){
     	
     	//Mina kopurua zailtasuna bider matrizearen zutabe kopurua izango da.
-    	int minaKop = pZailtasuna*this.matrize[0].length;
+    	this.minaKop = pZailtasuna*this.matrize[0].length;
+    	int minaKopAux = this.minaKop;
     	
     	Random ausazkoak = new Random();
     	
@@ -36,7 +38,7 @@ public class Matrizea {
    
     	
     	
-    	while(minaKop > 0 ){
+    	while(minaKopAux > 0 ){
     		
     		errenka = ausazkoak.nextInt(this.matrize.length);
     		zutabe	= ausazkoak.nextInt(this.matrize[0].length);
@@ -44,7 +46,7 @@ public class Matrizea {
     		if ( this.matrize[errenka][zutabe] == null){
     			
     			this.matrize[errenka][zutabe] = KasillaFactory.getKasillaFactory().sortuKasilla("mina", errenka, zutabe );
-    			minaKop--;
+    			minaKopAux--;
     		}
     	}
     }
