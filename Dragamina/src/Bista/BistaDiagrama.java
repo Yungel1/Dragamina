@@ -54,7 +54,7 @@ public class BistaDiagrama implements Observer {
 	private JLabel label_5;
 	private JLabel label_6;
 	private JLabel label_7;
-
+// si ves esto es que esta cambiado
 	/**
 	 * Launch the application.
 	 */
