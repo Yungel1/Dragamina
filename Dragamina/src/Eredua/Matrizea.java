@@ -11,12 +11,14 @@ import java.util.Random;
 public class Matrizea {
     private Kasilla[][] matrize;
     private int minaKop;
+    private int banderaKop;
 
     public Matrizea(int pErrenkadaKop,int pZutabeKop, int pZailtasuna){
     	
     	this.matrize = new Kasilla[pErrenkadaKop][pZutabeKop]; 
-    	this.minakEsleitu(pZailtasuna);
-    	this.besteKasillakEsleitu(); 
+    	this.minakEsleitu(pZailtasuna); //honetan minaKop hasieratuko da.
+    	this.besteKasillakEsleitu();
+    	this.banderaKop = 0;
     	this.printKasillak();
     }
     
@@ -130,8 +132,28 @@ public class Matrizea {
     }
     
     public void markatu(int pErrenkada,int pZutabea){
+    	
         this.matrize[pErrenkada][pZutabea].markatu();
+        
+        if(this.matrize[pErrenkada][pZutabea].getEstaltzea() instanceof Bandera){
+        	
+        	this.banderaKop++;
+        }
+        
+        else{
+        	
+        	this.banderaKop--;
+        }    
     }
+    
+    public int getUnekoMinak(){
+    	
+    	return this.minaKop-this.banderaKop;  //Bistaren mina kopurua adierazten duen display-an jartzeko.
+    } 
+    
+    
+    
+    
     
     public void desestali(int pErrenka, int pZutabe){
     	
@@ -203,6 +225,8 @@ public class Matrizea {
 		
 		}			
     }
+	 
+	 
 
 
 /****************Hauek programaren frogak egiteko erabili dira**********/

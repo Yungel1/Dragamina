@@ -18,6 +18,12 @@ public class DragaminaGestorea extends Observable{
     public int getZutabea(){
         return zelaia.getZutabea();
     }
+    
+    public int getUnekoMinak(){
+    	
+    	return this.zelaia.getUnekoMinak();
+    }
+    
     public void aktibatutakoaKudeatu(int pErrenkada,int pZutabea){
         zelaia.desestali(pErrenkada, pZutabea);
         super.setChanged();

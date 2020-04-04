@@ -22,6 +22,11 @@ public abstract class MinaZelaia {
     public int getMinaKop(){
         return this.getZutabea()*this.zailtasuna;
     }
+    
+    public int getUnekoMinak(){
+    	
+    	return this.zelaia.getUnekoMinak();
+    }
     public void markatu(int pErrenkada,int pZutabea){
         zelaia.markatu(pErrenkada,pZutabea);
     }
