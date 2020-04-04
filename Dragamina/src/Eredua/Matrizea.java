@@ -130,7 +130,7 @@ public class Matrizea {
     }
     
     public void markatu(int pErrenkada,int pZutabea){
-        //RELLENAR
+        this.matrize[pErrenkada][pZutabea].markatu();
     }
     
     public void desestali(int pErrenka, int pZutabe){
