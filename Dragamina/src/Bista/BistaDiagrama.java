@@ -97,13 +97,19 @@ public class BistaDiagrama implements Observer {
 		
 		frame = new JFrame();
 		if(DragaminaGestorea.getNireDragaminaGestorea(-1).getErrenkada()== 7) {
-			frame.setBounds(100, 100, 450, 300);	
+			frame.setBounds(100, 100, 450, 300);
+			getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n1.gif")));
+			getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
 		}
 		else if(DragaminaGestorea.getNireDragaminaGestorea(-1).getErrenkada()== 10) {
 			frame.setBounds(100, 100, 475, 350);
+			getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n3.gif")));
+			getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
 		}
 		else if(DragaminaGestorea.getNireDragaminaGestorea(-1).getErrenkada()== 12) {
 			frame.setBounds(100, 100, 600, 400);
+			getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n7.gif")));
+			getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n5.gif")));
 		}
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -220,10 +226,18 @@ public class BistaDiagrama implements Observer {
     	
     	this.kudeatu((DragaminaGestorea)arg0);   
     }
+    private void banderaKop() {
+    	int bandera=DragaminaGestorea.getNireDragaminaGestorea(-1).getUnekoMinak();
+    	int bizutabea= bandera%10;
+    	System.out.println(bizutabea);
+    	getLabel_5().setIcon(new ImageIcon(this.getClass().getResource("n1.gif")));
+    	int batzutabe=bandera/10;
+    	System.out.println(batzutabe);
+    		
+    }
     
 
     private void kudeatu(DragaminaGestorea drag) {
-    	
     	int x;
     	int y;
     	int xe;
@@ -239,6 +253,7 @@ public class BistaDiagrama implements Observer {
 				
 				if( est instanceof Bandera) {
 					lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("bandera.gif")));
+					this.banderaKop();
 					
 				}
 				else if(est instanceof Estalita) {
