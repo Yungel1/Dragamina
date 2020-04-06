@@ -36,7 +36,7 @@ public class ListaJokalariak {
     	
     	while( (ezkerrekoErtza < eskuinekoErtza) && !topatua ){
     		
-    		unekoPos		= (eskuinekoErtza-ezkerrekoErtza)/2;
+    		unekoPos		= (eskuinekoErtza+ezkerrekoErtza)/2;
     		konparatzekoa	= this.zerrenda.get(unekoPos);
     		
     		if( this.unekoJokalaria.konparatu( konparatzekoa.getPuntuak() ) == -1){

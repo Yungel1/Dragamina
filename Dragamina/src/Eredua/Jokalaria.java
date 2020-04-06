@@ -18,6 +18,8 @@ public class Jokalaria {
         return this.puntuak;
     }
     
+    //cambio random para pushear
+    
     public int konparatu(int pBestearenPuntuak){ //*****KLASE DIAGRAMAN EGUNERATU*********
     	
     	int emaitza = 0;
