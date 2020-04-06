@@ -132,8 +132,8 @@ public class BistaZailtasuna {
 					String izena= textField.getText();
 					int zailtasuna= comboBox.getSelectedIndex()+1;
 					frame.setVisible(false);
-					DragaminaGestorea dg=DragaminaGestorea.getNireDragaminaGestorea(zailtasuna);
-					BistaDiagrama bd=new BistaDiagrama();
+					DragaminaGestorea.getNireDragaminaGestorea(zailtasuna);
+					new BistaDiagrama();
 					
 				}
 			});
