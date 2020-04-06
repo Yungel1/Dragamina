@@ -11,7 +11,7 @@ import java.util.Random;
 public class Matrizea {
     private Kasilla[][] matrize;
     private int minaKop;
-    private int banderaKop;
+    private int banderaKop; 
 
     public Matrizea(int pErrenkadaKop,int pZutabeKop, int pZailtasuna){
     	
