@@ -132,7 +132,6 @@ public class Matrizea {
     }
     
     public void markatu(int pErrenkada,int pZutabea){
-    	
         this.matrize[pErrenkada][pZutabea].markatu();
         
         if(this.matrize[pErrenkada][pZutabea].getEstaltzea() instanceof Bandera){

@@ -62,6 +62,7 @@ public class BistaZailtasuna {
 	public BistaZailtasuna() {
 		initialize();
 		this.frame.setVisible(true);
+		frame.setResizable(false);
 	}
 
 	/**
@@ -132,7 +133,7 @@ public class BistaZailtasuna {
 					int zailtasuna= comboBox.getSelectedIndex()+1;
 					frame.setVisible(false);
 					DragaminaGestorea dg=DragaminaGestorea.getNireDragaminaGestorea(zailtasuna);
-					BistaDiagrama bd=new BistaDiagrama(dg);
+					BistaDiagrama bd=new BistaDiagrama();
 					
 				}
 			});

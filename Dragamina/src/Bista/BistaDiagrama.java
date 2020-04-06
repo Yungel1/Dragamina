@@ -8,6 +8,7 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
+import Eredua.Bandera;
 import Eredua.DragaminaGestorea;
 import Eredua.Estalita;
 import Eredua.Estaltzea;
@@ -39,7 +40,6 @@ import java.util.Observer;
 
 public class BistaDiagrama implements Observer {
 
-    private DragaminaGestorea dragamina;
     private int kasillaDesestalita=0;
     
 	private JFrame frame;
@@ -75,10 +75,9 @@ public class BistaDiagrama implements Observer {
 	/**
 	 * Create the application.
 	 */
-	public BistaDiagrama(Observable pDragaminaGestorea) {
+	public BistaDiagrama() {
 		
-	    this.dragamina=(DragaminaGestorea)pDragaminaGestorea;
-	    this.dragamina.addObserver(this);
+	    DragaminaGestorea.getNireDragaminaGestorea(-1).addObserver(this);
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -95,13 +94,23 @@ public class BistaDiagrama implements Observer {
 	 */
 	private void initialize() {
 		
+		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		if(DragaminaGestorea.getNireDragaminaGestorea(-1).getErrenkada()== 7) {
+			frame.setBounds(100, 100, 450, 300);	
+		}
+		else if(DragaminaGestorea.getNireDragaminaGestorea(-1).getErrenkada()== 10) {
+			frame.setBounds(100, 100, 475, 350);
+		}
+		else if(DragaminaGestorea.getNireDragaminaGestorea(-1).getErrenkada()== 12) {
+			frame.setBounds(100, 100, 600, 400);
+		}
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
 		frame.getContentPane().add(getPanel(), BorderLayout.NORTH);
 		frame.getContentPane().add(getPanel_1(), BorderLayout.CENTER);
-		this.hasieratu(dragamina.getErrenkada(), dragamina.getZutabea());
+		this.hasieratu(DragaminaGestorea.getNireDragaminaGestorea(-1).getErrenkada(), DragaminaGestorea.getNireDragaminaGestorea(-1).getZutabea());
 	}
 	
 	
@@ -125,7 +134,7 @@ public class BistaDiagrama implements Observer {
 		
 		if(lista==null) {
 			
-			return this.lista=new JLabel[dragamina.getErrenkada()][dragamina.getZutabea()];
+			return this.lista=new JLabel[DragaminaGestorea.getNireDragaminaGestorea(-1).getErrenkada()][DragaminaGestorea.getNireDragaminaGestorea(-1).getZutabea()];
 		}
 		
 		else {
@@ -169,7 +178,7 @@ public class BistaDiagrama implements Observer {
 							if(lista[x][y].equals(gelaxka)) {
 								xemaitza=x;
 								yemaitza=y;
-								dragamina.aktibatutakoaKudeatu(xemaitza,yemaitza);
+								DragaminaGestorea.getNireDragaminaGestorea(-1).aktibatutakoaKudeatu(xemaitza,yemaitza);
 								//lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
 							}
 						}
@@ -183,6 +192,24 @@ public class BistaDiagrama implements Observer {
 				//gelaxka.setIcon(new ImageIcon(this.getClass().getResource("34ed1783bb2ddd660686ac6a685270bf.jpg")));
 				//getLabel().setIcon(new ImageIcon(this.getClass().getResource("34ed1783bb2ddd660686ac6a685270bf.jpg")));
 				//getLista().get().setIcon(new ImageIcon(this.getClass().getResource("34ed1783bb2ddd660686ac6a685270bf.jpg")));
+			}
+			else if((e.getModifiers() & InputEvent.BUTTON1_MASK) == 0) {
+				JLabel gelaxka=(JLabel) e.getSource();
+				int y;
+				int x;
+				int xemaitza;
+				int yemaitza;
+				lista=getLista();
+				for (x = 0; x < lista.length; x++) {
+					for (y = 0; y < lista[0].length; y++) {
+						if(lista[x][y].equals(gelaxka)) {
+							xemaitza=x;
+							yemaitza=y;
+							DragaminaGestorea.getNireDragaminaGestorea(-1).markatu(xemaitza,yemaitza);
+							//lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
+						}
+					}
+			  }
 			}
 		}
 	}
@@ -210,9 +237,18 @@ public class BistaDiagrama implements Observer {
 				xe=x;
 				ye=y;
 				
-				if(est instanceof EzEstalita ) {
+				if( est instanceof Bandera) {
+					lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("bandera.gif")));
+					
+				}
+				else if(est instanceof Estalita) {
+					lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("tablero.gif")));
+				}
+				
+				else if(est instanceof EzEstalita  ) {
 					
                     this.kasillaDesestalita++;
+                    
                     
 				  	if(kas instanceof Mina) {
 				  		

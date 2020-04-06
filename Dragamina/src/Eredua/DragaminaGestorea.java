@@ -37,6 +37,8 @@ public class DragaminaGestorea extends Observable{
     }
     public void markatu(int pErrenkada,int pZutabea){
         zelaia.markatu(pErrenkada,pZutabea);
+        super.setChanged();
+        super.notifyObservers();
     }
     public void sartuJokalaria(String pIzena){
         ListaJokalariak.getNireListaJokalariak().sartuJokalaria(pIzena);
