@@ -28,6 +28,8 @@ public class ListaJokalariak {
     
     public void zerrendanSartu(){ //zerrenda ordenatuta egongo da
 
+    	
+    	/*IMPORTANTEA: PROBATU BEHAR DA WHILE-AREN BALDINTZAK ONDO DOAZELA JAKITEKO*/
     	int 		ezkerrekoErtza 		= 0;
     	int 		eskuinekoErtza 		= this.zerrenda.size()-1;
     	int 		unekoPos	   		= 0;
@@ -36,7 +38,7 @@ public class ListaJokalariak {
     	
     	while( (ezkerrekoErtza < eskuinekoErtza) && !topatua ){
     		
-    		unekoPos		= (eskuinekoErtza+ezkerrekoErtza)/2;
+    		unekoPos		= (eskuinekoErtza + ezkerrekoErtza)/2;
     		konparatzekoa	= this.zerrenda.get(unekoPos);
     		
     		if( this.unekoJokalaria.konparatu( konparatzekoa.getPuntuak() ) == -1){
@@ -57,6 +59,5 @@ public class ListaJokalariak {
     	
     	this.zerrenda.add(unekoPos, this.unekoJokalaria);
     	this.unekoJokalaria = null;							//partidaren amaieran
-    }
-    
+    }   
 }
