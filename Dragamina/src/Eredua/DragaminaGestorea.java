@@ -5,11 +5,11 @@ import java.util.Observable;
 public class DragaminaGestorea extends Observable{
     private MinaZelaia zelaia;
     private static DragaminaGestorea nireGestorea;
-    private DragaminaGestorea(){
-        this.zelaia=FactoryZailtasuna.getNireFactoryZailtasuna().zelaiaSortu(1);//Hau bigarren sprintean aldatuko da
+    private DragaminaGestorea(int pZailtasuna){
+        this.zelaia=FactoryZailtasuna.getNireFactoryZailtasuna().zelaiaSortu(pZailtasuna);//Hau bigarren sprintean aldatuko da
     }
-    public static DragaminaGestorea getNireDragaminaGestorea(){
-        if(nireGestorea==null)nireGestorea=new DragaminaGestorea();
+    public static DragaminaGestorea getNireDragaminaGestorea(int pZailtasuna){
+        if(nireGestorea==null)nireGestorea=new DragaminaGestorea(pZailtasuna);
         return nireGestorea;
     }
     public int getErrenkada(){
@@ -37,6 +37,8 @@ public class DragaminaGestorea extends Observable{
     }
     public void markatu(int pErrenkada,int pZutabea){
         zelaia.markatu(pErrenkada,pZutabea);
+        super.setChanged();
+        super.notifyObservers();
     }
     public void sartuJokalaria(String pIzena){
         ListaJokalariak.getNireListaJokalariak().sartuJokalaria(pIzena);
