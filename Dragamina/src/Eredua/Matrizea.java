@@ -18,7 +18,7 @@ public class Matrizea {
     	this.matrize = new Kasilla[pErrenkadaKop][pZutabeKop]; 
     	this.minakEsleitu(pZailtasuna); //honetan minaKop hasieratuko da.
     	this.besteKasillakEsleitu();
-    	this.banderaKop = 1;
+    	this.banderaKop = 0;
     	this.printKasillak();
     }
     
@@ -133,15 +133,13 @@ public class Matrizea {
     
     public void markatu(int pErrenkada,int pZutabea){
         
-        System.out.println(this.banderaKop);
-        System.out.println(this.minaKop);
         if(this.matrize[pErrenkada][pZutabea].getEstaltzea() instanceof Bandera){
             this.banderaKop--;
         	this.matrize[pErrenkada][pZutabea].markatu();
         }
         
         else{
-            if(this.banderaKop<=this.minaKop){
+            if(this.banderaKop<this.minaKop){
                 this.matrize[pErrenkada][pZutabea].markatu();
                 this.banderaKop++;
             }
