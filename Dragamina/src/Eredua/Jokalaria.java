@@ -45,4 +45,18 @@ public class Jokalaria {
     	
     	return emaitza;
     }
+    
+	/****************************PROBENTZAT ERABILITAKO METODOAK****************************/
+	
+	public Jokalaria(String pIzen, int pPuntuak){ //Eraikitzaile hau testak errazteko egin da. Komentatuta geratuko da.
+		
+		this.izena   = pIzen;
+		this.puntuak = pPuntuak;
+	}
+	
+	public void inprimatuJokalariarenInfo(){
+		
+		System.out.print(this.izena);
+		System.out.println("\t"+this.puntuak);
+	}
 }
