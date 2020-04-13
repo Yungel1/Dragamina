@@ -85,7 +85,7 @@ public class BistaZailtasuna {
 		}
 		return panel;
 	}
-	private JPanel getPanel_1() {
+	private JPanel getPanel_1() { //hfudsahfu
 		if (panel_1 == null) {
 			panel_1 = new JPanel();
 			panel_1.add(getBtnOk());
