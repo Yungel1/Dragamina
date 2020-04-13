@@ -18,9 +18,10 @@ public class DragaminaGestorea extends Observable{
     public int getZutabea(){
         return zelaia.getZutabea();
     }
-    
+    public boolean irabaziDu(){
+        return this.zelaia.irabaziDu();
+    }
     public int getUnekoMinak(){
-    	
     	return this.zelaia.getUnekoMinak();
     }
     

@@ -22,6 +22,9 @@ public abstract class MinaZelaia {
     public int getMinaKop(){
         return this.getZutabea()*this.zailtasuna;
     }
+    public boolean irabaziDu(){
+        return this.zelaia.irabaziDu();
+    }
     
     public int getUnekoMinak(){
     	

@@ -11,11 +11,12 @@ import java.util.Random;
 public class Matrizea {
     private Kasilla[][] matrize;
     private int minaKop;
-    private int banderaKop; 
+    private int banderaKop;
+    private int estalitaKop;
 
     public Matrizea(int pErrenkadaKop,int pZutabeKop, int pZailtasuna){
-    	
     	this.matrize = new Kasilla[pErrenkadaKop][pZutabeKop]; 
+    	this.estalitaKop=pErrenkadaKop*pZutabeKop;
     	this.minakEsleitu(pZailtasuna); //honetan minaKop hasieratuko da.
     	this.besteKasillakEsleitu();
     	this.banderaKop = 0;
@@ -118,6 +119,14 @@ public class Matrizea {
     	}
     }
     
+    public boolean irabaziDu(){
+        if(this.minaKop==this.estalitaKop){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
     public int getErrenkadaKop(){
     	
@@ -146,8 +155,7 @@ public class Matrizea {
         }    
     }
     
-    public int getUnekoMinak(){
-    	
+    public int getUnekoMinak(){ 
     	return this.minaKop-this.banderaKop;  //Bistaren mina kopurua adierazten duen display-an jartzeko.
     } 
     
@@ -156,7 +164,12 @@ public class Matrizea {
     
     
     public void desestali(int pErrenka, int pZutabe){
-    	
+        
+        if(this.matrize[pErrenka][pZutabe].getEstaltzea() instanceof Estalita){
+            this.estalitaKop--;
+            System.out.println(this.estalitaKop);
+        }
+        
     	if((this.matrize[pErrenka][pZutabe] instanceof Hutsa) && 
     			!(this.matrize[pErrenka][pZutabe].getEstaltzea() instanceof Bandera) ){
     		
@@ -164,7 +177,6 @@ public class Matrizea {
     	}
     	
     	else{
-    		
     		this.matrize[pErrenka][pZutabe].desestali();
     	}	
     }
@@ -220,7 +232,8 @@ public class Matrizea {
 		if( (pErrenka > -1) && (pZutabe > -1) && (pErrenka < this.matrize.length) &&
     			(pZutabe < this.matrize[0].length)&&!pAztertuak.contains(this.matrize[pErrenka][pZutabe])&&
     			  (this.matrize[pErrenka][pZutabe]).getEstaltzea() instanceof Estalita){
-		
+		    this.estalitaKop--;
+		    System.out.println(this.estalitaKop);
 			pAztertuGabeak.add(this.matrize[pErrenka][pZutabe]);
 			pAztertuak.add(this.matrize[pErrenka][pZutabe]);
 		

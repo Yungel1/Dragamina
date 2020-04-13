@@ -39,8 +39,6 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class BistaDiagrama implements Observer {
-
-    private int kasillaDesestalita=0;
     
 	private JFrame frame;
 	private JPanel panel;
@@ -254,16 +252,13 @@ public class BistaDiagrama implements Observer {
 				if( est instanceof Bandera) {
 					lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("bandera.gif")));
 					this.banderaKop();
-					
+				       
 				}
 				else if(est instanceof Estalita) {
 					lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("tablero.gif")));
 				}
 				
 				else if(est instanceof EzEstalita  ) {
-					
-                    this.kasillaDesestalita++;
-                    
                     
 				  	if(kas instanceof Mina) {
 				  		
@@ -349,7 +344,7 @@ public class BistaDiagrama implements Observer {
 			}
     	}
     	
-        if(drag.getErrenkada()*drag.getZutabea()-kasillaDesestalita==drag.getMinaKop()){
+        if(drag.irabaziDu()){
         	
           for (x = 0; x < drag.getErrenkada(); x++) {
         	  
@@ -362,8 +357,6 @@ public class BistaDiagrama implements Observer {
           System.out.println("\nIrabazi duzu!!!");
           
         }
-        
-        this.kasillaDesestalita=0;
     	
     }
 
