@@ -167,7 +167,7 @@ public class Matrizea {
         
         if(this.matrize[pErrenka][pZutabe].getEstaltzea() instanceof Estalita){
             this.estalitaKop--;
-            System.out.println(this.estalitaKop);
+            //System.out.println(this.estalitaKop);
         }
         
     	if((this.matrize[pErrenka][pZutabe] instanceof Hutsa) && 
@@ -233,7 +233,7 @@ public class Matrizea {
     			(pZutabe < this.matrize[0].length)&&!pAztertuak.contains(this.matrize[pErrenka][pZutabe])&&
     			  (this.matrize[pErrenka][pZutabe]).getEstaltzea() instanceof Estalita){
 		    this.estalitaKop--;
-		    System.out.println(this.estalitaKop);
+		    //System.out.println(this.estalitaKop);
 			pAztertuGabeak.add(this.matrize[pErrenka][pZutabe]);
 			pAztertuak.add(this.matrize[pErrenka][pZutabe]);
 		
