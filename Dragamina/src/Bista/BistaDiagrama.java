@@ -226,12 +226,125 @@ public class BistaDiagrama implements Observer {
     }
     private void banderaKop() {
     	int bandera=DragaminaGestorea.getNireDragaminaGestorea(-1).getUnekoMinak();
-    	int bizutabea= bandera%10;
-    	System.out.println(bizutabea);
-    	getLabel_5().setIcon(new ImageIcon(this.getClass().getResource("n1.gif")));
-    	int batzutabe=bandera/10;
-    	System.out.println(batzutabe);
+    	int erdikoa= bandera%10;
+    	//System.out.println(bizutabea);
+    	//getLabel_5().setIcon(new ImageIcon(this.getClass().getResource("n1.gif")));
+    	int eskumakoa=bandera/10;
+    	eskumakoa = eskumakoa%10;
+    	//System.out.println(batzutabe);
+    	this.diplayAldatu(erdikoa, eskumakoa);
+    	//System.out.println(erdikoa);
+    	//System.out.println(eskumakoa);
     		
+    }
+    
+ private void diplayAldatu(int z1, int z2){
+    	
+    	//erdiko zutabea aldatu
+    	
+    	if (z1==0){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
+    	}
+    	
+    	if (z1==1){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n1.gif")));
+    	}
+    	
+    	if (z1==2){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n2.gif")));
+    	}
+    	
+    	if (z1==3){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n3.gif")));
+    	}
+    	
+    	if (z1==4){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n4.gif")));
+    	}
+    	
+    	if (z1==5){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n5.gif")));
+    	}
+    	
+    	if (z1==6){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n6.gif")));
+    	}
+    	
+    	if (z1==7){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n7.gif")));
+    	}
+    	
+    	if (z1==8){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n8.gif")));
+    	}
+    	
+    	if (z1==9){
+    		
+    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n9.gif")));
+    	}
+    	
+    	
+    	//orain eskumako zutabea aldatu
+    	
+    	
+    	if (z2==0){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
+    	}
+    	
+    	if (z2==1){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n1.gif")));
+    	}
+    	
+    	if (z2==2){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n2.gif")));
+    	}
+    	
+    	if (z2==3){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n3.gif")));
+    	}
+    	
+    	if (z2==4){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n4.gif")));
+    	}
+    	
+    	if (z2==5){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n5.gif")));
+    	}
+    	
+    	if (z2==6){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n6.gif")));
+    	}
+    	
+    	if (z2==7){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n7.gif")));
+    	}
+    	
+    	if (z2==8){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n8.gif")));
+    	}
+    	
+    	if (z2==9){
+    		
+    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n9.gif")));
+    	}
     }
     
 
@@ -256,8 +369,22 @@ public class BistaDiagrama implements Observer {
 				}
 				else if(est instanceof Estalita) {
 					lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("tablero.gif")));
+					if (drag.getUnekoMinak()== 10){
+						getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n1.gif")));
+						getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
+					}
+					
+					else if (drag.getUnekoMinak()== 30){
+						getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n3.gif")));
+						getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
+					}
+					
+					else if (drag.getUnekoMinak()== 75){
+						getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n7.gif")));
+						getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n5.gif")));
+					}
+					
 				}
-				
 				else if(est instanceof EzEstalita  ) {
                     
 				  	if(kas instanceof Mina) {
