@@ -4,24 +4,21 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import java.awt.GridLayout;
-import java.awt.Rectangle;
+
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-import java.awt.FlowLayout;
+
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
+
 import java.awt.BorderLayout;
-import javax.swing.border.LineBorder;
+
 
 import Eredua.DragaminaGestorea;
 
-import java.awt.Color;
 import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -132,8 +129,9 @@ public class BistaZailtasuna {
 					String izena= textField.getText();
 					int zailtasuna= comboBox.getSelectedIndex()+1;
 					frame.setVisible(false);
-					DragaminaGestorea.getNireDragaminaGestorea(zailtasuna);
+					DragaminaGestorea gestorea = DragaminaGestorea.getNireDragaminaGestorea(zailtasuna);
 					new BistaDiagrama();
+					gestorea.sartuJokalaria(izena);
 					
 				}
 			});
