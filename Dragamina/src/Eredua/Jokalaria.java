@@ -5,8 +5,13 @@ public class Jokalaria {
     private String izena;
     
     public Jokalaria(String pIzena){
-        this.izena=pIzena;
-        this.puntuak=0;
+        if(pIzena.equals("")){
+            this.izena="Ezezaguna";
+        }
+        else{
+            this.izena=pIzena;
+            this.puntuak=0;
+        }
     }
     
     public void setPuntuak(int pPuntuak){
