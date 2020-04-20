@@ -241,8 +241,8 @@ public class BistaDiagrama implements Observer {
  private void diplayAldatu(int z1, int z2){
     	
     	//erdiko zutabea aldatu
-    	
-    	if (z1==0){
+        getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n"+z1+".gif")));
+    	/*if (z1==0){
     		
     		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
     	}
@@ -291,12 +291,12 @@ public class BistaDiagrama implements Observer {
     		
     		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n9.gif")));
     	}
-    	
+    	*/
     	
     	//orain eskumako zutabea aldatu
+        getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n"+z2+".gif")));
     	
-    	
-    	if (z2==0){
+    	/*if (z2==0){
     		
     		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
     	}
@@ -345,6 +345,7 @@ public class BistaDiagrama implements Observer {
     		
     		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n9.gif")));
     	}
+    	*/
     }
     
 
@@ -414,8 +415,8 @@ public class BistaDiagrama implements Observer {
 				  	else if(kas instanceof Zenbakizkoa) {
 				  		
 				  		int emaitza= ((Zenbakizkoa)kas).getZenb();
-				  		
-				  		switch(emaitza) {
+				  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c"+emaitza+".gif")));
+				  		/*switch(emaitza) {
 				  		
 				  		case 1:
 				  			
@@ -464,7 +465,7 @@ public class BistaDiagrama implements Observer {
 				  			
 				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c8.gif")));
 				  			break;
-				  		}
+				  		}*/
 				  		
 				  	}
 				}
