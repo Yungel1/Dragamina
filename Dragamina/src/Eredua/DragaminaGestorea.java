@@ -50,6 +50,11 @@ public class DragaminaGestorea extends Observable{
     public void puntuazioaKalkulatu(){//METODO BERRIA
         ListaJokalariak.getNireListaJokalariak().puntuazioaKalkulatu(zelaia.getErrenkada(),zelaia.getZutabea(),this.irabaziDu());
     }
+    public void erreseteatu(){
+        int zailtasuna=this.zelaia.zailtasuna;
+        nireGestorea=null;
+        getNireDragaminaGestorea(zailtasuna);
+    }
     /*Proba metodoak*/
 	/*public void printKasillak(){
 		

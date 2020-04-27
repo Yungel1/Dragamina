@@ -130,7 +130,7 @@ public class BistaZailtasuna {
 					int zailtasuna= comboBox.getSelectedIndex()+1;
 					frame.setVisible(false);
 					DragaminaGestorea gestorea = DragaminaGestorea.getNireDragaminaGestorea(zailtasuna);
-					new BistaDiagrama();
+					BistaDiagrama.getNireDiagrama();
 					gestorea.sartuJokalaria(izena);
 					
 				}

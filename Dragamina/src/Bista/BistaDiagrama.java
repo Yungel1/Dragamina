@@ -13,6 +13,7 @@ import Eredua.DragaminaGestorea;
 import Eredua.Estalita;
 import Eredua.Estaltzea;
 import Eredua.EzEstalita;
+import Eredua.FactoryZailtasuna;
 import Eredua.Hutsa;
 import Eredua.Kasilla;
 import Eredua.Mina;
@@ -52,32 +53,27 @@ public class BistaDiagrama implements Observer {
 	private JLabel label_5;
 	private JLabel label_6;
 	private JLabel label_7;
-// si ves esto es que esta cambiado
+	private static BistaDiagrama nireDiagrama;
+	    
+	public static BistaDiagrama getNireDiagrama(){
+	     if(nireDiagrama==null){
+	    	 nireDiagrama=new BistaDiagrama();
+	     }
+	     return nireDiagrama;
+	    }
 	/**
 	 * Launch the application.
 	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					BistaDiagrama window = new BistaDiagrama();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-
 	
 	/**
 	 * Create the application.
 	 */
-	public BistaDiagrama() {
+	private BistaDiagrama() {
 		
 	    DragaminaGestorea.getNireDragaminaGestorea(-1).addObserver(this);
 		initialize();
 		this.frame.setVisible(true);
+		frame.setResizable(false);
 	}
 	
 	
@@ -148,7 +144,7 @@ public class BistaDiagrama implements Observer {
 	}
 	
 	
-	private JLabel gelaxkaSortu() {
+	public JLabel gelaxkaSortu() {
 		
 		JLabel label = new JLabel();
 		label.setBorder(BorderFactory.createLoweredBevelBorder());
@@ -161,6 +157,11 @@ public class BistaDiagrama implements Observer {
 
 	}
 	
+	public void setVisible(boolean pF){
+		nireDiagrama=null;
+		this.frame.setVisible(pF);
+	}
+	
 	
 	private class Controlador extends MouseAdapter{
 		
@@ -169,7 +170,13 @@ public class BistaDiagrama implements Observer {
 		public void mouseClicked(MouseEvent e) {
 			if ((e.getModifiers() & InputEvent.BUTTON1_MASK) != 0) {
 				JLabel gelaxka=(JLabel) e.getSource();
-				if(e.getSource().equals(getLabel_7())) {
+				if(e.getSource().equals(getBtnCarita())){
+					BistaDiagrama.getNireDiagrama().berrabiarazi();
+					BistaDiagrama.getNireDiagrama().setVisible(false);
+					BistaDiagrama.getNireDiagrama();
+					
+				}
+				else if(e.getSource().equals(getLabel_7())) {
 					System.exit(0);
 				}
 				int y;
@@ -183,19 +190,10 @@ public class BistaDiagrama implements Observer {
 								xemaitza=x;
 								yemaitza=y;
 								DragaminaGestorea.getNireDragaminaGestorea(-1).aktibatutakoaKudeatu(xemaitza,yemaitza);
-								//lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
 							}
 						}
 				  }
 				  
-
-				//lista[1][1].setIcon(new ImageIcon(this.getClass().getResource("34ed1783bb2ddd660686ac6a685270bf.jpg")));
-				//System.out.println(e.getPoint());
-				//getLabel().setText(String.format(%d", e.getXOnScreen(), e.getYOnScreen()));
-				//getLabel().setText(String.format("X: %d Y:%d", e.getXOnScreen(), e.getYOnScreen()));
-				//gelaxka.setIcon(new ImageIcon(this.getClass().getResource("34ed1783bb2ddd660686ac6a685270bf.jpg")));
-				//getLabel().setIcon(new ImageIcon(this.getClass().getResource("34ed1783bb2ddd660686ac6a685270bf.jpg")));
-				//getLista().get().setIcon(new ImageIcon(this.getClass().getResource("34ed1783bb2ddd660686ac6a685270bf.jpg")));
 			}
 			else if((e.getModifiers() & InputEvent.BUTTON1_MASK) == 0) {
 				JLabel gelaxka=(JLabel) e.getSource();
@@ -210,7 +208,6 @@ public class BistaDiagrama implements Observer {
 							xemaitza=x;
 							yemaitza=y;
 							DragaminaGestorea.getNireDragaminaGestorea(-1).markatu(xemaitza,yemaitza);
-							//lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
 						}
 					}
 			  }
@@ -242,110 +239,9 @@ public class BistaDiagrama implements Observer {
     	
     	//erdiko zutabea aldatu
         getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n"+z1+".gif")));
-    	/*if (z1==0){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
-    	}
-    	
-    	if (z1==1){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n1.gif")));
-    	}
-    	
-    	if (z1==2){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n2.gif")));
-    	}
-    	
-    	if (z1==3){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n3.gif")));
-    	}
-    	
-    	if (z1==4){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n4.gif")));
-    	}
-    	
-    	if (z1==5){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n5.gif")));
-    	}
-    	
-    	if (z1==6){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n6.gif")));
-    	}
-    	
-    	if (z1==7){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n7.gif")));
-    	}
-    	
-    	if (z1==8){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n8.gif")));
-    	}
-    	
-    	if (z1==9){
-    		
-    		getLabel_3().setIcon(new ImageIcon(this.getClass().getResource("n9.gif")));
-    	}
-    	*/
-    	
-    	//orain eskumako zutabea aldatu
+        
+        //orain eskumako zutabea aldatu
         getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n"+z2+".gif")));
-    	
-    	/*if (z2==0){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n0.gif")));
-    	}
-    	
-    	if (z2==1){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n1.gif")));
-    	}
-    	
-    	if (z2==2){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n2.gif")));
-    	}
-    	
-    	if (z2==3){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n3.gif")));
-    	}
-    	
-    	if (z2==4){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n4.gif")));
-    	}
-    	
-    	if (z2==5){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n5.gif")));
-    	}
-    	
-    	if (z2==6){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n6.gif")));
-    	}
-    	
-    	if (z2==7){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n7.gif")));
-    	}
-    	
-    	if (z2==8){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n8.gif")));
-    	}
-    	
-    	if (z2==9){
-    		
-    		getLabel_2().setIcon(new ImageIcon(this.getClass().getResource("n9.gif")));
-    	}
-    	*/
     }
     
 
@@ -416,64 +312,14 @@ public class BistaDiagrama implements Observer {
 				  		
 				  		int emaitza= ((Zenbakizkoa)kas).getZenb();
 				  		lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c"+emaitza+".gif")));
-				  		/*switch(emaitza) {
-				  		
-				  		case 1:
-				  			
-				  			
-				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c1.gif")));
-				  			break;
-				  			
-				  		case 2:
-				  			
-				  			
-				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c2.gif")));
-				  			break;
-				  			
-				  		case 3:
-				  			
-				  			
-				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c3.gif")));
-				  			break;
-				  			
-				  		case 4:
-				  			
-				  			
-				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c4.gif")));
-				  			break;
-				  			
-				  		case 5:
-				  			
-				  			
-				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c5.gif")));
-				  			break;
-				  			
-				  		case 6:
-				  			
-				  			
-				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c6.gif")));
-				  			break;
-				  			
-				  		case 7:
-				  			
-				  			
-				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c7.gif")));
-				  			break;
-				  			
-				  		case 8:
-				  			
-				  			
-				  			lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("c8.gif")));
-				  			break;
-				  		}*/
-				  		
+				  					  		
 				  	}
 				}
 			}
     	}
     	
         if(drag.irabaziDu()){
-        	
+        	//drag.irabaziDu()
           for (x = 0; x < drag.getErrenkada(); x++) {
         	  
               for (y = 0; y < drag.getZutabea(); y++) {
@@ -483,11 +329,19 @@ public class BistaDiagrama implements Observer {
           }
           
           System.out.println("\nIrabazi duzu!!!");
+          BistaBerriro.getNireBerriro();
+          this.setVisible(false);
           
         }
     	
     }
 
+    public void berrabiarazi(){
+    	
+    	DragaminaGestorea.getNireDragaminaGestorea(-1).erreseteatu();
+    	this.hasieratu(DragaminaGestorea.getNireDragaminaGestorea(-1).getErrenkada(), DragaminaGestorea.getNireDragaminaGestorea(-1).getZutabea());
+    	
+    }
 	
 	private JPanel getPanel() {
 		
@@ -524,9 +378,10 @@ public class BistaDiagrama implements Observer {
 	private JLabel getBtnCarita() {
 		
 		if (btnCarita == null) {
-			
+	
 			btnCarita = new JLabel("");
 			btnCarita.setIcon(new ImageIcon(this.getClass().getResource("cara1.gif")));
+			btnCarita.addMouseListener(new Controlador());
 		}
 		
 		return btnCarita;
