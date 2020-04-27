@@ -160,9 +160,6 @@ public class Matrizea {
     } 
     
     
-    
-    
-    
     public void desestali(int pErrenka, int pZutabe){
         
         if(this.matrize[pErrenka][pZutabe].getEstaltzea() instanceof Estalita){

@@ -130,4 +130,9 @@ public class ListaJokalariak {
     	
     	this.unekoJokalaria=pJoka;
     }
+
+    public void puntuazioaKalkulatu(int pErrenkada, int pZutabea, boolean pIrabaziDu) {
+        unekoJokalaria.puntuazioaKalkulatu(pErrenkada,pZutabea,pIrabaziDu);
+        this.zerrendanSartu();
+    }
 }

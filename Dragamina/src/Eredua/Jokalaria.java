@@ -3,6 +3,7 @@ package Eredua;
 public class Jokalaria {
     private int puntuak;
     private String izena;
+    private Kronometroa kron;
     
     public Jokalaria(String pIzena){
         if(pIzena.equals("")){
@@ -12,6 +13,7 @@ public class Jokalaria {
             this.izena=pIzena;
             this.puntuak=0;
         }
+        kron=new Kronometroa();
     }
     
     public void setPuntuak(int pPuntuak){
@@ -64,4 +66,11 @@ public class Jokalaria {
 		System.out.print(this.izena);
 		System.out.println("\t"+this.puntuak);
 	}
+
+    public void puntuazioaKalkulatu(int pErrenkada, int pZutabea, boolean pIrabaziDu) {
+        if(pIrabaziDu){
+            int puntuazioa=(pErrenkada*pZutabea*1000)/(int)this.kron.pasatutakoDenbora();
+            this.setPuntuak(puntuazioa);
+        }
+    }
 }

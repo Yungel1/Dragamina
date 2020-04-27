@@ -47,6 +47,9 @@ public class DragaminaGestorea extends Observable{
     public void zerrendanSartu(){
         ListaJokalariak.getNireListaJokalariak().zerrendanSartu();
     }
+    public void puntuazioaKalkulatu(){//METODO BERRIA
+        ListaJokalariak.getNireListaJokalariak().puntuazioaKalkulatu(zelaia.getErrenkada(),zelaia.getZutabea(),this.irabaziDu());
+    }
     /*Proba metodoak*/
 	/*public void printKasillak(){
 		
