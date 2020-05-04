@@ -1,5 +1,7 @@
 package Eredua;
 
+import java.io.PrintWriter;
+
 public class Jokalaria {
     private int puntuak;
     private String izena;
@@ -16,7 +18,7 @@ public class Jokalaria {
         kron=new Kronometroa();
     }
     
-    public void setPuntuak(int pPuntuak){
+    public void setPuntuak(int pPuntuak){//BEERRRIRIIA
         this.puntuak=pPuntuak;
     }
     
@@ -72,5 +74,10 @@ public class Jokalaria {
             int puntuazioa=(pErrenkada*pZutabea*1000)/(int)this.kron.pasatutakoDenbora();
             this.setPuntuak(puntuazioa);
         }
+    }
+    
+    public void idatziJokalaria(PrintWriter pOS){//JOKALARIA
+        pOS.print(this.izena+"###");
+        pOS.println(this.puntuak);
     }
 }

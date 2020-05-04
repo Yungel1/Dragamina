@@ -1,5 +1,6 @@
 package Eredua;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -131,8 +132,28 @@ public class ListaJokalariak {
     	this.unekoJokalaria=pJoka;
     }
 
-    public void puntuazioaKalkulatu(int pErrenkada, int pZutabea, boolean pIrabaziDu) {
+    public void puntuazioaKalkulatu(int pErrenkada, int pZutabea, boolean pIrabaziDu) {//BERRIA
         unekoJokalaria.puntuazioaKalkulatu(pErrenkada,pZutabea,pIrabaziDu);
         this.zerrendanSartu();
     }
+    
+    public void sartuJokFitx(String pIzena,int pPuntuak){//BERRIA
+        Jokalaria jok=new Jokalaria(pIzena);
+        jok.setPuntuak(pPuntuak);
+        this.zerrenda.add(jok);
+    }
+    
+    public void idatziJokalariak(PrintWriter pOutputStream){//BERRIA
+        
+        Iterator<Jokalaria> itr = this.getIteradorea();
+        Jokalaria jok = null;
+
+        while( itr.hasNext() ){
+
+            jok = itr.next();
+            jok.idatziJokalaria(pOutputStream);
+            
+        }
+    }
+    
 }
