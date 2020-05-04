@@ -24,6 +24,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import java.awt.Dimension;
+import java.awt.Font;
 
 public class BistaZailtasuna {
 
@@ -95,6 +96,7 @@ public class BistaZailtasuna {
 	private JLabel getLblNewLabel() {
 		if (lblNewLabel == null) {
 			lblNewLabel = new JLabel("Sartu zure izena:");
+			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		}
 		return lblNewLabel;
@@ -110,6 +112,7 @@ public class BistaZailtasuna {
 	private JLabel getLblJokoarenZailtasunMaila() {
 		if (lblJokoarenZailtasunMaila == null) {
 			lblJokoarenZailtasunMaila = new JLabel("Jokoaren zailtasun maila esleitu:");
+			lblJokoarenZailtasunMaila.setFont(new Font("Tahoma", Font.BOLD, 11));
 			lblJokoarenZailtasunMaila.setHorizontalAlignment(SwingConstants.CENTER);
 		}
 		return lblJokoarenZailtasunMaila;

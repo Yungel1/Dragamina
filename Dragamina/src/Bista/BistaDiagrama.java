@@ -295,11 +295,16 @@ public class BistaDiagrama implements Observer {
                                   if(drag.lortuKasilla(x, y) instanceof Mina) {
                                 	  
                                       lista[x][y].setIcon(new ImageIcon(this.getClass().getResource("mina-n.gif")));
+                                      
+                                     
                               }
                           }
                           
 				  	  }
+				  	  
                       lista[xe][ye].setIcon(new ImageIcon(this.getClass().getResource("mina-r.gif")));
+                      System.out.println("\nGaldu duzu!!!");
+                      
 				  	}
 				  	
 				  	else if(kas instanceof Hutsa) {

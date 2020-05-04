@@ -15,6 +15,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class BistaBerriro {
 	
@@ -72,7 +73,8 @@ public class BistaBerriro {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				BistaDiagrama.getNireDiagrama().berrabiarazi();
-				BistaDiagrama.getNireDiagrama().gelaxkaSortu();
+				BistaDiagrama.getNireDiagrama().setVisible(false);
+				BistaDiagrama.getNireDiagrama();
 				BistaBerriro.getNireBerriro().setVisible(false);
 				
 			}
@@ -83,13 +85,16 @@ public class BistaBerriro {
 		JButton btnNewButton_1 = new JButton("EZ");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				BistaRanking.getNireRanking();
 			}
 		});
 		btnNewButton_1.setBounds(241, 172, 89, 29);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JLabel lblBerriroJolastuNahi = new JLabel("Berriro jolastu nahi duzu?");
-		lblBerriroJolastuNahi.setBounds(149, 86, 172, 38);
+		lblBerriroJolastuNahi.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblBerriroJolastuNahi.setBounds(138, 86, 172, 38);
 		frame.getContentPane().add(lblBerriroJolastuNahi);
 	}
 }
