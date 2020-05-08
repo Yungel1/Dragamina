@@ -1,5 +1,6 @@
 package Eredua;
 
+import java.util.ArrayList;
 import java.util.Observable;
 
 public class DragaminaGestorea extends Observable{
@@ -50,6 +51,14 @@ public class DragaminaGestorea extends Observable{
     public void puntuazioaKalkulatu(){//METODO BERRIA
         ListaJokalariak.getNireListaJokalariak().puntuazioaKalkulatu(zelaia.getErrenkada(),zelaia.getZutabea(),this.irabaziDu());
     }
+    
+    public ArrayList<Jokalaria> getZerrenda(){//BERRIA
+    	
+    	return ListaJokalariak.getNireListaJokalariak().getZerrenda();
+    }
+    
+    
+    
     public void erreseteatu(){
         int zailtasuna=this.zelaia.zailtasuna;
         nireGestorea=null;

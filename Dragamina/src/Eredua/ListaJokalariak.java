@@ -119,6 +119,11 @@ public class ListaJokalariak {
         }
     }
     
+    public ArrayList<Jokalaria> getZerrenda(){ //BERRIA
+    	
+    	return this.zerrenda;
+    }
+    
     /****************************PROBENTZAT ERABILITAKO METODOAK****************************/
     
     public void zerrendaResetProba(){
