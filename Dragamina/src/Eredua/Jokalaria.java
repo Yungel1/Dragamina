@@ -18,7 +18,7 @@ public class Jokalaria {
         kron=new Kronometroa();
     }
     
-    public void setPuntuak(int pPuntuak){//BEERRRIRIIA
+    public void setPuntuak(int pPuntuak){
         this.puntuak=pPuntuak;
     }
     
@@ -27,8 +27,18 @@ public class Jokalaria {
         return this.puntuak;
     }
     
-    //cambio random para pushear
+    public void puntuazioaKalkulatu(int pErrenkada, int pZutabea, boolean pIrabaziDu) {
+        if(pIrabaziDu){
+            int puntuazioa=(pErrenkada*pZutabea*1000)/(int)this.kron.pasatutakoDenbora();
+            this.setPuntuak(puntuazioa);
+        }
+    }
     
+    public void idatziJokalaria(PrintWriter pOS){
+        pOS.print(this.izena+"###");
+        pOS.println(this.puntuak);
+    }
+        
     public int konparatu(int pBestearenPuntuak){ //*****KLASE DIAGRAMAN EGUNERATU*********
     	
     	int emaitza = 0;
@@ -69,15 +79,5 @@ public class Jokalaria {
 		System.out.println("\t"+this.puntuak);
 	}
 
-    public void puntuazioaKalkulatu(int pErrenkada, int pZutabea, boolean pIrabaziDu) {
-        if(pIrabaziDu){
-            int puntuazioa=(pErrenkada*pZutabea*1000)/(int)this.kron.pasatutakoDenbora();
-            this.setPuntuak(puntuazioa);
-        }
-    }
-    
-    public void idatziJokalaria(PrintWriter pOS){//JOKALARIA
-        pOS.print(this.izena+"###");
-        pOS.println(this.puntuak);
-    }
+
 }
