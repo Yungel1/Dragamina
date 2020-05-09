@@ -334,8 +334,11 @@ public class BistaDiagrama implements Observer {
           }
           
           System.out.println("\nIrabazi duzu!!!");
-          BistaBerriro.getNireBerriro();
+          DragaminaGestorea.getNireDragaminaGestorea(-1).puntuazioaKalkulatu();
+          DragaminaGestorea.getNireDragaminaGestorea(-1).jokalariakIdatzi();
+          BistaBerriro.getNireBerriro();          
           this.setVisible(false);
+          
           
         }
     	

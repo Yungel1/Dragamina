@@ -57,12 +57,24 @@ public class DragaminaGestorea extends Observable{
     	return ListaJokalariak.getNireListaJokalariak().getZerrenda();
     }
     
-    
+    public void jokalariakIdatzi() {
+    	
+    	Fitxategia.getNireFitxategia().jokalariakIdatzi();    	
+    	
+    }
     
     public void erreseteatu(){
         int zailtasuna=this.zelaia.zailtasuna;
         nireGestorea=null;
         getNireDragaminaGestorea(zailtasuna);
+        this.sartuJokalariaBerriro();
+        
+    }
+    
+    private void sartuJokalariaBerriro() {
+    	
+    	ListaJokalariak.getNireListaJokalariak().sartuJokalariaBerriro();
+    	
     }
     /*Proba metodoak*/
 	/*public void printKasillak(){

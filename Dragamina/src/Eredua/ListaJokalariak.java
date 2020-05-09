@@ -124,6 +124,12 @@ public class ListaJokalariak {
     	return this.zerrenda;
     }
     
+    public void sartuJokalariaBerriro() {
+    	
+    	this.unekoJokalaria = new Jokalaria(this.unekoJokalaria.getIzena());
+    	
+    }
+    
     /****************************PROBENTZAT ERABILITAKO METODOAK****************************/
     
     public void zerrendaResetProba(){
