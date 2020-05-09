@@ -65,6 +65,12 @@ public class Jokalaria {
     	return emaitza;
     }
     
+    public String getIzena() {
+    	
+    	
+    	return this.izena;
+    }
+    
 	/****************************PROBENTZAT ERABILITAKO METODOAK****************************/
 	
 	public Jokalaria(String pIzen, int pPuntuak){ //Eraikitzaile hau testak errazteko egin da. Komentatuta geratuko da.
