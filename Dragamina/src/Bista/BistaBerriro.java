@@ -41,7 +41,7 @@ public class BistaBerriro {
 	/**
 	 * Create the application.
 	 */
-	public BistaBerriro() {
+	private BistaBerriro() {
 		initialize();
 		this.frame.setVisible(true);
 	}

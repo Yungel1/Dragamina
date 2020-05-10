@@ -39,7 +39,6 @@ public class BistaRanking {
 	private JButton btnOk;
 	private JList list;
 	private static BistaRanking nireRanking;
-	private JScrollPane scrollPane;
 
 
 	/**
@@ -69,7 +68,7 @@ public class BistaRanking {
 	/**
 	 * Create the application.
 	 */
-	public BistaRanking() {
+	private BistaRanking() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -84,14 +83,14 @@ public class BistaRanking {
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(getLblLehenengoPuntuazio());
 		frame.getContentPane().add(getBtnOk());
-		frame.getContentPane().add(getScrollPane());
+		frame.getContentPane().add(getList());
 		frame.setResizable(false);
 	}
 	private JLabel getLblLehenengoPuntuazio() {
 		if (lblLehenengoPuntuazio == null) {
 			lblLehenengoPuntuazio = new JLabel("Lehenengo 10 puntuazio hoberenak:");
 			lblLehenengoPuntuazio.setFont(new Font("Tahoma", Font.BOLD, 15));
-			lblLehenengoPuntuazio.setBounds(95, 3, 312, 31);
+			lblLehenengoPuntuazio.setBounds(81, 11, 312, 31);
 		}
 		return lblLehenengoPuntuazio;
 	}
@@ -111,6 +110,7 @@ public class BistaRanking {
 	private JList<String> getList() {
 		if (list == null) {
 			list = new JList<String>();
+			list.setBounds(69, 41, 290, 185);
             DefaultListModel<String> mod=new DefaultListModel<String>();
             ArrayList<Jokalaria> zerrenda = DragaminaGestorea.getNireDragaminaGestorea(-1).getZerrenda();
 			int kont = 0;
@@ -128,13 +128,5 @@ public class BistaRanking {
 			
 		}
 		return list;
-	}
-	private JScrollPane getScrollPane() {
-		if (scrollPane == null) {
-			scrollPane = new JScrollPane();
-			scrollPane.setBounds(151, 81, 143, 84);
-			scrollPane.setViewportView(getList());
-		}
-		return scrollPane;
 	}
 }
