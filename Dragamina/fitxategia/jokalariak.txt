@@ -1,3 +1,4 @@
+Ezezaguna###2800
 heyThere###1400
 SoyOtro###1400
 mirringo###1400
@@ -34,3 +35,4 @@ mirringo###1400
 mirringo###1400
 Otro ahí###985
 nuevoJugador###972
+Patata###933
