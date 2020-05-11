@@ -54,7 +54,7 @@ public class Fitxategia {
     
     public void jokalariakIdatzi(){
         
-        String filename        = "fitxategia/jokalariak.txt";
+        String filename        = "fitxategia"+File.separator+"jokalariak.txt";
 
         try{
 

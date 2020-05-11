@@ -1,38 +1,15 @@
-Ezezaguna###2800
-heyThere###1400
-SoyOtro###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-HastaAquíCreo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-mirringo###1400
-Otro ahí###985
-nuevoJugador###972
-Patata###933
+The Guy###9999
+Franz Liszt###2800
+patata###1944
+Franz Kafka###1000
+Johann Sebastian Bach###500
+Johann Wolfgang von Goethe###475
+Sergei Rachmaninoff###300
+David Hackworth###234
+Lee Sedol###232
+AlphaGo###200
+Jonport Guerrero Dragneel###165
+Yungel###140
+Anderneechan###123
+Megumin###100
+Camilo haciendo pruebas###1
